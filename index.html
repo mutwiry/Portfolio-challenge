@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vincent Mutwiri - Personal Portfolio</title>
+  <!-- Link to CSS file -->
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+        <header>
+           <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="Education">Education</a> </li>
+                    <li><a href="interests">interests</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+           </header>
+    <main>
+            <!--Home/Landing Section-->
+            <section id="home">
+                <h1>Welcome to My Portfolio</h1>
+                <p>Hi, I'm Vincent Mutwiri, a passionate software developer.</p>
+                <img src="Images\WhatsApp Image 2025-04-02 at 21.45.49_8091337a.jpg" alt="Vincent Mutwiri">
+                </section>
+            <!--About Section-->
+            <section id="about">
+                <h2>About Me</h2>
+                <p>I am a software developer with a strong interest in web development and machine learning.</p>
+                <p>I enjoy solving complex problems and creating efficient solutions.</p>
+                </section>
+            <!--Skills Section-->
+            <section id="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>React</li>
+                </ul>
+                </section>
+            <!--Education Section-->
+            <section id="education">
+                <h2>Education</h2>
+                <p>Bachelor of Science in computer science from Plp Academy.</p>
+                <p>Graduated in 2023 with honors.</p>
+                <a href="Vincent Mutwiri Cv (1).pdf" download class="button">Download CV</a>
+                </section>
+            <!--Interests Section-->
+            <section id="interests">
+                <h2>Interests</h2>
+                <p>I enjoy reading tech blogs, hiking, and playing video games.</p>
+                <p>I'm also interested in AI and machine learning.</p>
+                </section>
+            <!--Projects Section-->
+            <section id="projects">
+                <h2>Projects</h2>
+
+                <article class="project-item">
+                    <h3>Project 1: Personal Portfolio Website</h3>
+                    <p>A personal portfolio website to showcase my skills and projects.</p>
+                    <a href=# target="_blank"> View site</a>
+                </article>
+                <article class="project-item">
+                    <h3>Project 2: Weather App</h3>
+                    <p>A web application that provides weather information using an API.</p>
+                    <a href=# target="_blank"> View site</a>
+                    </article>
+            </section>
+            <!--Contact Section-->
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <p>Feel free to reach me out! Fill in the form below.</p>
+                <form id="contact-form" action="https://formspree.io/f/xjvovqzj" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button type="submit" class="button">Send</button>
+
+                </form>
+                <p id="form-status"></p>
+
+            </section>
+
+    </main>
+    <footer>
+        <p> &c 2025 Vincent Mutwiri. All rights reserved.</p>
+        <a href="#">GitHub</a>| <a href="#">LinkedIn</a>| <a href="#">Twitter</a>
+    </footer>
+    <script src="script.js"></script>
+    </body>
+</html>
