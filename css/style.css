@@ -108,11 +108,7 @@ section h2{
     border: 3px solid #a1bbba; /* NEW: Adds a clean, light border */
 
 }
-.anchor {
-    position: relative;
-    top: -100px; /* height of your navbar (adjust accordingly) */
-    visibility: hidden;
-}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;           /* center the container */

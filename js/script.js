@@ -58,20 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .status-success { color: green; }
     .status-sending { color: blue; }
     */
-    // Smooth scrolling for internal links
-    const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
-    smoothScrollLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent default anchor click behavior
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
-
-    // e.g., animations on scroll, interactive elements
+   
 
 
 }); // End of DOMContentLoaded
