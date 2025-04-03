@@ -58,8 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .status-success { color: green; }
     .status-sending { color: blue; }
     */
--
-.
     // Smooth scrolling for internal links
     const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
     smoothScrollLinks.forEach(link => {
@@ -77,3 +75,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 }); // End of DOMContentLoaded
+
+// --- Animation on Scroll ---
+// Example: Fade in elements when they come into view
+const observers = document.querySelectorAll('.animate-fade');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animationPlayState = 'running';
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+observers.forEach(el => {
+  el.style.animationPlayState = 'paused';
+  observer.observe(el);
+});
+
+// --- Dark Mode Toggle ---
+const modeCheckbox = document.getElementById('mode-checkbox');
+const icon = document.getElementById('mode-icon');
+const modeText = document.getElementById('mode-text');
+const body = document.body;
+
+function applyMode(isLight) {
+    body.classList.toggle('dark-mode', !isLight);
+    icon.textContent = isLight ? '🌞' : '🌙';  
+    modeText.textContent = isLight ? 'Light Mode' : 'Dark Mode';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+}
+
+// On toggle
+modeCheckbox.addEventListener('change', () => {
+    applyMode(modeCheckbox.checked);
+});
+
+// On page load
+const savedTheme = localStorage.getItem('theme');
+let isInitiallyLight = savedTheme ? (savedTheme === 'light') : false;
+modeCheckbox.checked = isInitiallyLight;
+applyMode(isInitiallyLight);
+    
+
+
+
