@@ -64,14 +64,20 @@ nav ul li a:hover{
 }
 /*Section styles*/
 section{
+    
+    scroll-margin-top: 100px; /* Space for sticky header */
     padding: 20px;
     margin: 20px 0;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: background-color 0.3s ease;
+    position: relative; /* Added for positioning */
+    overflow: hidden; /* Added to prevent overflow */
+    border: 1px solid #ccc; /* Optional: Add a border for separation */
 }
 section h2{
+    scroll-margin-top: 100px;
     margin-bottom: 10px;
     font-size: 1.5rem;
     color: #333;
@@ -96,8 +102,14 @@ section h2{
     margin: 20px auto; /* Centers the image */
     display: block; /* Centers the image in the block */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: Adds a shadow for depth */
-    
+
 }
+.anchor {
+    position: relative;
+    top: -100px; /* height of your navbar (adjust accordingly) */
+    visibility: hidden;
+}
+
 
 /*Skill lists*/
 #skilll ul{
@@ -194,6 +206,11 @@ a:hover {
     margin-top: 15px;
     font-weight: bold;
 }
+/*Status message styles*/
+.status-error { color: red; }
+    .status-success { color: green; }
+    .status-sending { color: blue; }
+
 /*footer styles*/
 footer{
     background-color:   #333;
