@@ -42,29 +42,97 @@
             </nav>
            </header>
     <main>
-        <section class="animate-fade animate-delay-1" id="contact">
-        <div class="container">
-            <div class="anchor" id="contact-anchor"></div> 
-        <h2>Contact Me</h2>
-        <p>Feel free to reach me out! Fill in the form below.</p>
-        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
-        <p>Whether you have a question or just want to say hi, I’d love to hear from you.</p>
-        <form id="contact-form" action="https://formspree.io/f/xjvovqzj" method="POST">
+        <!-- =======================
+         Main Content Area
+         ======================== -->
+    <main>
+      <!-- Contact Section -->
+      <section id="contact" class="animate-fade"> <!-- Main section container -->
+          <div class="container"> <!-- Standard container -->
 
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required>
+              <!-- Optional Anchor -->
+              <!-- <div class="anchor" id="contact-anchor"></div> -->
 
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
+              <!-- 1. Section Heading -->
+              <h2>Get In Touch</h2>
 
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+              <!-- 2. Introductory Paragraph -->
+              <p class="section-intro" style="text-align: center; max-width: 750px; margin: 0 auto 40px auto;">
+                  I'm always excited to connect! Whether you have a project proposal, a question about my work, an opportunity for collaboration, or just want to say hello, please feel free to reach out using the form below or through my other contact channels.
+              </p>
 
-          <button class="button" type="submit">Send</button>
-        </form>     
-        <p id="form-status"></p>
-        </div>
-        </section>
+              <!-- 3. Contact Grid (Form + Info) -->
+              <div class="contact-grid">
+
+                  <!-- Column 1: Contact Form -->
+                  <div class="contact-form-container animate-fade animate-delay-1">
+                      <h3>Send Me a Message</h3>
+                      <form id="contact-form" action="https://formspree.io/f/xjvovqzj" method="POST">
+
+                          <label for="name">Name:</label>
+                          <!-- Added placeholder -->
+                          <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+
+                          <label for="email">Email:</label>
+                           <!-- Added placeholder -->
+                          <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+
+                          <label for="message">Message:</label>
+                           <!-- Added placeholder -->
+                          <textarea id="message" name="message" rows="6" placeholder="What's on your mind?" required></textarea>
+
+                          <!-- Use primary button style -->
+                          <button class="button button-primary" type="submit">Send Message</button>
+                      </form>
+                       <!-- Form Status Message Area -->
+                      <p id="form-status" style="text-align: center; margin-top: 20px;"></p>
+                  </div> <!-- End .contact-form-container -->
+
+                  <!-- Column 2: Contact Info / Alternatives -->
+                  <div class="contact-info-container animate-fade animate-delay-2">
+                      <h3>Other Ways to Connect</h3>
+                      <p>You can also reach me directly or connect on professional networks:</p>
+
+                      <ul class="contact-info-list">
+                          <li>
+                              <span class="contact-icon">📧</span> <!-- Placeholder Icon -->
+                              <a href="mailto:your.email@example.com">your.email@example.com</a> <!-- Replace with your actual email -->
+                          </li>
+                          <li>
+                              <span class="contact-icon">💼</span> <!-- Placeholder Icon -->
+                              <a href="[Your LinkedIn Profile URL]" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a> <!-- Replace with your LinkedIn URL -->
+                          </li>
+                          <li>
+                              <span class="contact-icon">💻</span> <!-- Placeholder Icon -->
+                              <a href="[Your GitHub Profile URL]" target="_blank" rel="noopener noreferrer">GitHub Profile</a> <!-- Replace with your GitHub URL -->
+                          </li>
+                           <!-- Add other relevant links like Twitter, Calendly, etc. if desired -->
+                           <!--
+                           <li>
+                               <span class="contact-icon">🐦</span>
+                               <a href="[Your Twitter Profile URL]" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+                           </li>
+                           -->
+                      </ul>
+
+                      <!-- Optional: Add Location Info or Map Placeholder -->
+                      <!--
+                      <div class="location-info">
+                          <h4>My Location</h4>
+                          <p>Based in [Your City, Country] - Available for remote opportunities globally.</p>
+                           Map placeholder - you would replace this with an embedded map iframe
+                          <div class="map-placeholder" style="background-color: #e0e0e0; height: 200px; border-radius: 8px; display:flex; align-items:center; justify-content:center; color:#888; margin-top:15px;">
+                              Map Area
+                          </div>
+                      </div>
+                      -->
+
+                  </div> <!-- End .contact-info-container -->
+
+              </div> <!-- End .contact-grid -->
+
+          </div> <!-- End .container -->
+      </section>
 
     </main>
     
