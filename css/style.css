@@ -1,522 +1,715 @@
-/*Basic Resets & defaults*/
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    
-}
-html{
-    scroll-behavior: smooth;
-}
-body{
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-    font-size: 1rem;
-    overflow-x: hidden;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-/*container for centered content*/
-main{
-    max-width: 960px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
-/*Header styles*/
-header{
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-    position:sticky;/* Makes header sticky */
-    top: 0;
-    z-index: 10;/* Ensures header stays on top of other content */
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-nav ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-nav ul li{
-    display: inline;
-    margin: 0 15px;
-}
-nav ul li a{
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-nav ul li a:hover{
-    background-color: #555;
-    color: #ddd;
-}
-/*Section styles*/
-section{
-    
-    scroll-margin-top: 100px; /* Space for sticky header */
-    padding: 20px;
-    margin: 20px 0;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: background-color 0.3s ease;
-    position: relative; /* Added for positioning */
-    overflow: hidden; /* Added to prevent overflow */
-    border: 1px solid #ccc; /* Optional: Add a border for separation */
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-section h2{
-    scroll-margin-top: 100px;
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-    color: #333;
-    text-align: center;
-}
-/*hero section styles*/
-.hero{
-    background-color: #e0e0e0; /* Different background for hero */
-    text-align: center;
-    padding: 60px 20px;
-}
-.hero h1{
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #333;
-}
-.resize-image {
-    width: 250px;    /* Specify desired width */
-    height: 250px;   /* Specify desired height */
-    object-fit: cover; /* Ensures image covers dimensions neatly */
-    border-radius: 50%; /* Optional: Makes the image circular */
-    margin: 20px auto; /* Centers the image */
-    display: block; /* Centers the image in the block */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: Adds a shadow for depth */
-    border: 3px solid #a1bbba; /* NEW: Adds a clean, light border */
-
+/* ============================================================ */
+/* === 1. Basic Resets & Defaults                          === */
+/* ============================================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: #333; /* Base link color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #555; /* Base link hover color */
+}
+
+/* ============================================================ */
+/* === 2. Layout Structure (Header, Nav, Main, Footer)     === */
+/* ============================================================ */
+main {
+  max-width: 1200px; /* Use consistent max-width */
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure header is above most things */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Base Desktop Navigation --- */
+nav {
+    /* Container for nav elements */
+    position: relative; /* Needed for absolute positioning of mobile menu/button */
+}
+
+nav ul.nav-list { /* Added .nav-list class */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul.nav-list li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul.nav-list li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul.nav-list li a:hover {
+  background-color: #555;
+  color: #ddd;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+  border-top: 1px solid #444; /* Darker border for footer */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 40px; /* Add space above footer */
+}
+
+footer p {
+  margin-bottom: 10px; /* Space below paragraphs */
+  font-size: 0.9rem;
+}
+footer p:last-of-type {
+    margin-bottom: 0; /* No margin on last paragraph */
+}
+
+footer a {
+  color: #fff; /* Footer links white */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ccc; /* Lighter hover for footer links */
+}
+
+
+/* ============================================================ */
+/* === 3. Common Components & Containers                   === */
+/* ============================================================ */
+
+/* --- Base Container Styling --- */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;           /* center the container */
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px; /* NEW: Adds breathing space between sections */
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .container h2 {
-    color: #3d93a7;
-    margin-bottom: 10px;
-  }
-  
-  .container p {
-    color: #555;
-    line-height: 1.6;
-  }
-  .hero p {
-    margin-bottom: 30px; /* NEW: Adds space below the welcome message */
+  /* Applied within sections */
+  max-width: 1200px; /* Consistent max width */
+  margin: 0 auto; /* Center within parent */
+  padding: 30px 20px; /* Default padding */
+  background-color: #ffffff;
+  border-radius: 8px; /* Slightly softer radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 40px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #eee; /* Subtle border */
+}
+
+/* --- Section Base Styling --- */
+section {
+  /* Generally holds a .container */
+  scroll-margin-top: 80px; /* Adjust if header height changes */
+  padding: 40px 0; /* Vertical padding on the section */
+  margin: 0; /* Remove margin if .container handles spacing */
+  background-color: transparent; /* Section itself is transparent */
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  position: relative;
+  overflow: hidden; /* Keep this */
+  /* Remove transitions handled by .container or body */
+}
+
+section h2 {
+  /* Default section heading style */
+  margin-bottom: 30px; /* More space below heading */
+  font-size: 2rem; /* Larger section headings */
+  color: #333;
+  text-align: center;
+  font-weight: 600;
+}
+
+body.dark-mode section h2 {
+    color: #eee; /* Light heading in dark mode */
+}
+/* Specific heading color inside containers */
+.container h2 {
+  color: #3d93a7; /* Theme color for headings inside containers */
+  margin-bottom: 25px; /* Adjust space */
+  font-size: 1.8rem; /* Slightly smaller than section h2 */
+}
+body.dark-mode .container h2 {
+   color: #4db8d2; /* Lighter theme color */
+}
+
+.container p {
+  color: #555;
+  line-height: 1.6;
+}
+body.dark-mode .container p {
+   color: #ccc;
 }
 
 
-
-/*Skill lists*/
-#skilll ul{
-    list-style: square;
-    padding: 0;
-    margin-left: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-/*project items*/
-.project-item{
-    background-color: #f4f4f4;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
-.project-item img{
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-.project-item h3{
-    margin: 10px 0;
-    font-size: 1.5rem;
-    color: #333;
-}
-.project-item p{
-    font-size: 1rem;
-    color: #666;
-}
-.project-item a{
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-.project-item a:hover{
-    background-color: #555;
-    color: #ddd;
-}
-.project-item, .button {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .project-item:hover, .button:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  }
-/*Button styles*/
+/* --- Button Base & Variants --- */
 .button, button[type="submit"] {
-    display: inline-block;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 12px 25px; /* Slightly larger padding */
+  text-decoration: none;
+  border: 2px solid #333; /* Add border for consistency */
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .button:hover, button[type="submit"]:hover {
-    background-color: #555;
+  background-color: #555;
+  border-color: #555;
+  transform: translateY(-2px); /* Subtle lift on hover */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-a {
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s ease;
+
+/* --- Defined Button Variants --- */
+.button-primary {
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #333;
 }
-a:hover {
-    color: #555;
+.button-primary:hover {
+  background-color: #555;
+  border-color: #555;
 }
-/*contact form styles*/
+
+.button-secondary {
+  background-color: transparent;
+  color: #333;
+  border: 2px solid #333;
+}
+.button-secondary:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.button-outline {
+  background-color: transparent;
+  color: #555;
+  border: 1px solid #ccc;
+}
+.button-outline:hover {
+  background-color: #f4f4f4;
+  border-color: #bbb;
+}
+
+.button-small {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+
+/* --- Image Styling --- */
+.resize-image { /* Primarily for Hero */
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border: 4px solid #a1bbba; /* Slightly thicker border */
+}
+
+
+/* ============================================================ */
+/* === 4. Specific Section Styles (Enhanced Landing Page)  === */
+/* ============================================================ */
+
+/* --- 4.1 Enhanced Hero Section --- */
+.hero-section {
+  padding: 60px 0; /* Use section padding */
+  background-color: #e0e0e0;
+  text-align: center;
+  /* Remove specific margin/border/shadow from section */
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: transparent; /* Override container background */
+  box-shadow: none; /* Override container shadow */
+  padding: 0 20px; /* Add horizontal padding back */
+  margin-bottom: 0;
+  border: none; /* Override container border */
+  border-radius: 0;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 650px;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.hero-content h2 {
+  font-size: 1.4rem;
+  color: #555;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.hero-image-container {
+  flex-shrink: 0;
+  max-width: 300px;
+  width: 70%; /* Adjust mobile width */
+}
+
+.hero-image-container .resize-image {
+    max-width: 100%;
+    height: auto;
+    border-width: 4px; /* Keep thicker border */
+    margin: 0 auto; /* Ensure centered if container has extra space */
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* --- 4.2 About Me Section --- */
+#about p {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* --- 4.3 Enhanced Skills Section --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.skill-category {
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.skill-category h4 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #3d93a7;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 8px;
+}
+
+.skill-category ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.skill-category li {
+  margin-bottom: 10px;
+  color: #555;
+  position: relative;
+  padding-left: 20px;
+}
+
+.skill-category li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #3d93a7;
+  font-weight: bold;
+}
+
+/* --- 4.4 Featured Projects Section --- */
+#projects > .container > p:first-of-type { /* Intro paragraph */
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px; /* Space before grid */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff; /* Base background */
+  border: 1px solid #eee;
+  border-radius: 8px; /* Match container radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Use container shadow */
+  overflow: hidden; /* Ensure image radius applies */
+  /* Keep combined transitions */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  /* Remove specific padding/margin from base item */
+  padding: 0;
+  margin: 0;
+  text-align: left; /* Align text left */
+}
+
+.project-item:hover {
+   /* Keep existing hover */
+    transform: translateY(-5px) scale(1.01); /* Adjusted hover */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+.project-thumbnail {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 0; /* Remove radius if item handles it */
+  border-top-right-radius: 0;
+  margin-bottom: 0; /* Remove space */
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Container for text content inside project item */
+.project-item-content {
+    padding: 20px;
+    flex-grow: 1; /* Allow content to push tags/button down */
+    display: flex;
+    flex-direction: column;
+}
+
+.project-item h3 {
+  margin: 0 0 10px 0; /* Adjust margin */
+  font-size: 1.4rem; /* Adjust size */
+  color: #333;
+}
+
+.project-item p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px; /* Space below paragraph */
+  flex-grow: 1; /* Push tags/button down */
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto; /* Push to bottom */
+  padding-top: 15px; /* Space above tags */
+  margin-bottom: 15px; /* Space below tags */
+}
+
+.project-tags span {
+  background-color: #e9e9e9;
+  color: #555;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+/* Style project buttons */
+.project-item a.button {
+    margin: 0; /* Reset margin */
+    align-self: flex-start; /* Align button left */
+    margin-top: auto; /* Push button to bottom (works with tags) */
+}
+
+.section-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* --- 4.5 Experience Highlights --- */
+.experience-item {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #ddd;
+}
+.experience-item:last-child {
+  border-bottom: none;
+}
+
+.experience-item h4 {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.experience-dates {
+  display: block;
+  font-style: italic;
+  color: #777;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.experience-item ul {
+  list-style: disc;
+  margin-left: 20px;
+  padding-left: 0;
+}
+
+.experience-item li {
+  margin-bottom: 8px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* --- 4.6 Education Section --- */
+#education .button {
+  margin-top: 20px;
+}
+#education p strong {
+  color: #333;
+}
+
+/* --- 4.7 Interests Section --- */
+#interests p {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* --- 4.8 Contact Section --- */
+#contact h2 {
+  margin-bottom: 10px;
+}
+#contact > .container > p:first-of-type {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#contact form {
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+}
+
 #contact form label {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
 }
 
 #contact form input[type="text"],
 #contact form input[type="email"],
 #contact form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  width: 100%;
+  padding: 12px; /* Increase padding */
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
 #contact form textarea {
-    resize: vertical; /* Allow vertical resize */
+  resize: vertical;
+  min-height: 120px; /* Set minimum height */
 }
 
 #form-status {
-    margin-top: 15px;
-    font-weight: bold;
-}
-/*Status message styles*/
-.status-error { color: red; }
-    .status-success { color: green; }
-    .status-sending { color: blue; }
-    /* Animation: Fade in effect */
-@keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Base animation style */
-  .animate-fade {
-    opacity: 0;
-    animation: fadeInUp 0.8s ease-out forwards;
-  }
-  
-  /* Delay support (optional) */
-  .animate-delay-1 {
-    animation-delay: 0.3s;
-  }
-  .animate-delay-2 {
-    animation-delay: 0.6s;
-  }
-  
-
-/*footer styles*/
-footer{
-    background-color:   #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    position: relative; /* Changed to relative */
-    bottom: 0; /* Changed to 0 */
-    width: 100%; /* Added to ensure full width */
-    border-top: 1px solid #ccc; /* Optional: Add a top border for separation */
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Optional: Add a shadow for depth */
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-footer p{
-    margin: 0;
-    font-size: 0.9rem;
-}
-footer a{
-    color: #151414;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    transition: color 0.3s ease;
-}
-footer a:hover{
-    color: #ddd;
-}
-/*Basic responsiveness*/
-/* Responsive styles for smaller screens */
-@media (max-width: 768px) {
-    header {
-        position: static; /* Remove sticky header on small screens if needed */
-    }
-
-    nav ul li {
-        display: block; /* Stack nav items vertically */
-        margin: 10px 0;
-    }
-
-    main {
-        padding: 0 10px;
-    }
-
-    section {
-        padding: 30px 15px;
-    }
-
-    .hero h1 {
-        font-size: 2em;
-    }
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center; /* Center status message */
 }
 
-/*dark mode styles*/
-body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0; /* Slightly softer white */
-  }
-  
-  body.dark-mode header {
-    background-color: #1e1e1e;
-    color: #fff;
-  }
-  
-  body.dark-mode section {
-    background-color: #1e1e1e;
-    border-color: #333; /* Darker border */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Adjust shadow for dark */
-  }
-  
-  body.dark-mode .container {
-    background-color: #2a2a2a; /* Darker container background */
-    color: #e0e0e0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Adjust shadow */
-  }
-  
-   body.dark-mode .container h2 {
-      color: #4db8d2; /* Adjust heading color */
-   }
-  
-   body.dark-mode .container p {
-      color: #ccc; /* Lighter paragraph text */
-   }
-  
-  body.dark-mode .project-item {
-    background-color: #2a2a2a;
-    color: #e0e0e0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  }
-  
-  body.dark-mode .project-item h3{
-      color: #eee;
-  }
-  body.dark-mode .project-item p{
-      color: #bbb;
-  }
-  
-  
-  body.dark-mode nav ul li a {
-    color: #fff;
-  }
-  
-  body.dark-mode nav ul li a:hover {
-    background-color: #444;
-    color: #ccc;
-  }
-  
-  body.dark-mode footer {
-    background-color: #1e1e1e;
-    color: #ccc;
-  }
-  
-   body.dark-mode footer a{
-      color: #8ab4f8; /* Lighter blue for links */
-   }
-    body.dark-mode footer a:hover{
-      color: #aecbfa;
-   }
-  
-  body.dark-mode a {
-    color: #8ab4f8; /* General link color in dark mode */
-  }
-   body.dark-mode a:hover {
-    color: #aecbfa;
-  }
-  
-  /* Specific link colors if needed */
-  body.dark-mode .project-item a {
-      background-color: #444; /* Darker button background */
-      color: #eee;
-  }
-  body.dark-mode .project-item a:hover {
-      background-color: #555;
-      color: #fff;
-  }
-  body.dark-mode .button,
-  body.dark-mode button[type="submit"] {
-      background-color: #555;
-      color: #eee;
-  }
-  body.dark-mode .button:hover,
-  body.dark-mode button[type="submit"]:hover {
-      background-color: #666;
-  }
-   
-/* Toggle switch wrapper */
-.switch {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 999;
-    cursor: pointer; 
-  }
-  
-  /* Hide checkbox */
-  .switch input {
-    opacity: 0; /* Use opacity instead of display:none for accessibility */
-    width: 0;
-    height: 0;
-    position: absolute; /* Take it out of flow */
-  }
-  
-  /* Slider styling */
-  .slider {
-    background-color: #555; /* Darker default background for better contrast */
-    width: 120px; /* FIX: Increased width to accommodate text */
-    height: 34px; /* Slightly taller */
-    border-radius: 34px;
-    position: relative;
-    transition: background-color 0.4s ease;
-    display: flex;
-    align-items: center;
-    /* justify-content: flex-start; /* Removed - we'll position icon/text manually */
-    padding: 0 5px;
-    overflow: hidden; /* Hide parts moving outside */
-  }
-  /* Combined Icon and Text Container within Slider */
-.slider .slider-content {
-    display: flex;
-    align-items: center;
-    position: absolute; /* Allow positioning */
-    left: 5px; /* Initial position (for dark mode) */
-    transition: left 0.4s ease; /* Animate the left position */
+.social-links {
+  margin-top: 40px;
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  color: #333;
 }
-  
-  /* Icon inside slider */
-  .slider .icon {
-    font-size: 1.4rem;
-    line-height: 1; /* Ensure it aligns well */
-  /* FIX: Added transition for transform and potentially opacity if needed */
-  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Bounce effect for rotation */
-  }
-  /* Text next to the icon */
-.slider .mode-text {
-    font-size: 0.9rem;
-  margin-left: 8px;
-  color: #f5f5f5; /* Default text color (light for dark background) */
-  white-space: nowrap; /* Prevent text wrapping */
+
+.social-links p {
+  margin-bottom: 15px;
+  color: #555;
   font-weight: 500;
-  /* FIX: Added transition for color */
+}
+
+.social-links a {
+  margin: 0 12px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+  color: #007bff; /* Example hover color */
+  text-decoration: underline;
+}
+
+/* ============================================================ */
+/* === 5. Utilities (Animation, Status, Toggle Switch)     === */
+/* ============================================================ */
+
+/* --- Status message styles --- */
+.status-error { color: #dc3545; font-weight: bold; } /* Red */
+.status-success { color: #28a745; font-weight: bold; } /* Green */
+.status-sending { color: #007bff; font-weight: bold; } /* Blue */
+
+/* --- Animation: Fade in effect --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade {
+  opacity: 0; /* Start hidden */
+  animation: fadeInUp 0.8s ease-out forwards;
+  /* animation-play-state is handled by JS */
+}
+
+.animate-delay-1 { animation-delay: 0.2s; } /* Adjusted delay */
+.animate-delay-2 { animation-delay: 0.4s; }
+
+
+/* --- Toggle Switch --- */
+.switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1050; /* Above header content, below mobile nav maybe */
+  cursor: pointer;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.slider {
+  background-color: #555;
+  width: 120px;
+  height: 34px;
+  border-radius: 34px;
+  position: relative;
+  transition: background-color 0.4s ease;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  overflow: hidden;
+}
+
+.slider .slider-content {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 5px; /* Initial (Dark Mode) */
+  transition: left 0.4s ease;
+}
+
+.slider .icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.slider .mode-text {
+  font-size: 0.9rem;
+  margin-left: 8px;
+  color: #f5f5f5;
+  white-space: nowrap;
+  font-weight: 500;
   transition: color 0.3s ease;
-  }
-  
-  /* Change text color in dark mode */
-  body.dark-mode .slider .mode-text {
-    color: #f5f5f5;
+}
 
-  }
-  
-  
-  /* When checkbox is checked (dark mode) */
-  input:checked + .slider {
-    background-color: #3d93a7;
-    justify-content: flex-end;
-  }
-  /* When checkbox is checked (Light Mode Active) */
+/* Light Mode Active State (Checkbox Checked) */
 input:checked + .slider {
-    background-color: #ccc; /* Lighter background for light mode */
-  }
-
-
-  input:checked + .slider .icon {
-    transform: rotate(360deg);
-  }
-  body.dark-mode section,
-body.dark-mode .container {
-  background-color: #1a1a1a;
-  color: #eaeaea;
-  border-color: #333;
+  background-color: #ccc;
 }
 
-/* Move content to the right when checked */
 input:checked + .slider .slider-content {
-    /* Adjust 'left' value carefully based on slider width and content width */
-    left: calc(120px - 5px - 100px); /* Approx: slider_width - padding_right - content_width */
-    /* You might need to fine-tune the '100px' value */
+  /* Adjust '105px' based on inspection of actual content width */
+  left: calc(120px - 5px - 105px);
 }
-input:checked + .slider .icon {
-    /* Keep rotation or change if desired */
-    transform: rotate(360deg);
-  }
-  
-   input:checked + .slider .mode-text {
-    color: #333; /* Dark text on light background */
-  }
-  
-/* === Responsive Navigation Styles === */
 
-/* (Optional) Screen Reader Only Text Helper Class */
+input:checked + .slider .icon {
+  transform: rotate(360deg);
+}
+
+input:checked + .slider .mode-text {
+  color: #333;
+}
+
+/* --- Screen Reader Only Text Helper --- */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -529,137 +722,493 @@ input:checked + .slider .icon {
   border-width: 0;
 }
 
-/* Hamburger Button Styles */
-.hamburger-btn {
-  display: none; /* Hidden by default on larger screens */
-  background: none;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  position: absolute; /* Position relative to the header/nav */
-  top: 15px; /* Adjust as needed */
-  left: 20px;  /* Position on the left */
-  z-index: 1050; /* Make sure it's above other header content if needed */
-  width: 40px; /* Fixed width */
-  height: 40px; /* Fixed height */
+/* ============================================================ */
+/* === 6. Dark Mode Styles                                 === */
+/* ============================================================ */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
-.hamburger-line {
-  display: block;
-  width: 25px; /* Width of the lines */
-  height: 3px;  /* Thickness of the lines */
-  background-color: #fff; /* Color of the lines (adjust for dark mode below) */
-  margin: 5px auto; /* Spacing between lines */
-  transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+body.dark-mode header {
+  background-color: #1e1e1e;
+  border-bottom-color: #333; /* Add border color for header */
 }
 
-/* Dark mode adjustment for hamburger lines */
-body.dark-mode .hamburger-line {
-  background-color: #eee;
+body.dark-mode footer {
+  background-color: #1e1e1e;
+  color: #ccc;
+  border-top-color: #333;
+}
+
+body.dark-mode footer a {
+   color: #8ab4f8; /* Use consistent dark mode link color */
+}
+body.dark-mode footer a:hover {
+   color: #aecbfa;
+}
+
+body.dark-mode .container {
+  background-color: #1e1e1e; /* Darker container */
+  color: #e0e0e0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Darker shadow */
+  border-color: #333;
+}
+
+/* General links in dark mode */
+body.dark-mode a {
+  color: #8ab4f8;
+}
+body.dark-mode a:hover {
+  color: #aecbfa;
+}
+
+/* --- Dark Mode Button Variants --- */
+body.dark-mode .button,
+body.dark-mode button[type="submit"] {
+  background-color: #333; /* Darker base button */
+  color: #eee;
+  border-color: #555;
+}
+body.dark-mode .button:hover,
+body.dark-mode button[type="submit"]:hover {
+  background-color: #444;
+  border-color: #666;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+}
+
+body.dark-mode .button-primary {
+  background-color: #4db8d2; /* Example dark mode primary color */
+  color: #121212;
+  border-color: #4db8d2;
+}
+body.dark-mode .button-primary:hover {
+  background-color: #6cd2e8;
+  border-color: #6cd2e8;
+}
+
+body.dark-mode .button-secondary {
+  color: #4db8d2; /* Text matches dark primary */
+  border-color: #4db8d2; /* Border matches dark primary */
+}
+body.dark-mode .button-secondary:hover {
+  background-color: #4db8d2;
+  color: #121212;
+}
+
+body.dark-mode .button-outline {
+    color: #ccc;
+    border-color: #555;
+}
+body.dark-mode .button-outline:hover {
+    background-color: #2a2a2a;
+    border-color: #777;
 }
 
 
-/* --- Styles for Mobile View (e.g., screens <= 768px) --- */
+/* --- Dark Mode Specific Section Overrides --- */
+
+body.dark-mode .hero-section { background-color: #1f1f1f; }
+body.dark-mode .hero-content h1 { color: #f0f0f0; }
+body.dark-mode .hero-content h2 { color: #bdbdbd; }
+body.dark-mode .hero-content p { color: #cccccc; }
+body.dark-mode .resize-image { border-color: #566f6e; } /* Darker border */
+
+body.dark-mode #about p { color: #ccc; }
+
+body.dark-mode .skill-category { background-color: #2a2a2a; border-color: #444; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+body.dark-mode .skill-category:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+body.dark-mode .skill-category h4 { color: #6cd2e8; border-bottom-color: #444; }
+body.dark-mode .skill-category li { color: #ccc; }
+body.dark-mode .skill-category li::before { color: #6cd2e8; }
+
+body.dark-mode .project-item { background-color: #2a2a2a; border-color: #444; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+body.dark-mode .project-item:hover { box-shadow: 0 8px 16px rgba(0,0,0,0.25); }
+body.dark-mode .project-thumbnail { background-color: #333; border-bottom-color: #444; }
+body.dark-mode .project-item h3 { color: #eee; }
+body.dark-mode .project-item p { color: #bbb; }
+body.dark-mode .project-tags span { background-color: #444; color: #ccc; }
+/* Project item buttons inherit dark mode button styles */
+/* REMOVED empty ruleset: body.dark-mode .project-item a.button {} */
+
+body.dark-mode .experience-item { border-bottom-color: #444; }
+body.dark-mode .experience-item h4 { color: #eee; }
+body.dark-mode .experience-dates { color: #aaa; }
+body.dark-mode .experience-item li { color: #ccc; }
+
+body.dark-mode #education p strong { color: #eee; }
+
+body.dark-mode #interests p { color: #ccc; }
+
+body.dark-mode #contact form label { color: #ccc; }
+body.dark-mode #contact form input,
+body.dark-mode #contact form textarea {
+    background-color: #2a2a2a;
+    border-color: #555;
+    color: #eee;
+}
+body.dark-mode #contact form input::placeholder,
+body.dark-mode #contact form textarea::placeholder {
+    color: #888;
+}
+body.dark-mode .social-links { border-top-color: #444; }
+body.dark-mode .social-links p { color: #ccc; }
+/* Social links already handled by body.dark-mode a */
+
+/* Dark mode status messages */
+body.dark-mode .status-error { color: #ff6b6b; } /* Lighter red */
+body.dark-mode .status-success { color: #63e6be; } /* Lighter green */
+body.dark-mode .status-sending { color: #8ab4f8; } /* Use link color */
+
+/* ============================================================ */
+/* === 7. Responsive Styles (Media Queries)                === */
+/* ============================================================ */
+
+/* --- Styles for Mobile View (<= 768px) --- */
 @media (max-width: 768px) {
 
-  /* Adjust header padding if needed to make space for hamburger */
-  header {
-    padding-top: 60px; /* Example: Add space if hamburger is absolutely positioned near top */
-    text-align: left; /* Align nav content left perhaps */
+  /* --- Layout Adjustments --- */
+  main {
+    padding: 0 15px; /* Slightly less horizontal padding */
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
-  /* Make Hamburger Visible */
+  header {
+    /* position: static; */ /* Keep sticky unless it causes issues */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: relative; /* Keep for positioning children */
+    min-height: 60px; /* Ensure minimum height for positioned elements */
+  }
+
+  /* Adjust dark mode switch position */
+   .switch {
+       top: 12px; /* Adjust vertical position */
+       right: 15px;
+   }
+
+  section {
+    padding: 30px 0; /* Vertical padding */
+  }
+
+  .container {
+      padding: 20px 15px; /* Less padding inside containers */
+      margin-bottom: 30px;
+  }
+
+  section h2 {
+      font-size: 1.6rem; /* Smaller headings */
+      margin-bottom: 20px;
+  }
+  .container h2 {
+      font-size: 1.5rem;
+  }
+
+  /* --- Hero Adjustments --- */
+  .hero-section {
+      padding: 40px 0;
+  }
+  .hero-content h1 {
+      font-size: 2.2rem; /* Smaller hero heading */
+  }
+  .hero-content h2 {
+      font-size: 1.2rem;
+  }
+  .hero-image-container {
+      width: 60%; /* Further adjust image size */
+      max-width: 200px;
+  }
+  .resize-image { /* Reduce size */
+      width: 180px;
+      height: 180px;
+  }
+
+  /* --- Responsive Navigation --- */
+
+  /* Make Hamburger Visible & Position */
   .hamburger-btn {
     display: block; /* Show the button */
+    position: absolute;
+    top: 8px; /* Adjust to align with switch */
+    left: 15px;
+    z-index: 1050; /* Ensure it's clickable */
+    background: none; /* Ensure no background */
+    border: none; /* Ensure no border */
+    padding: 10px; /* Clickable area */
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
   }
 
-  /* Hide original nav list layout and prepare for vertical dropdown */
-  .nav-list {
-    display: flex; /* Use flexbox for children */
-    flex-direction: column; /* Stack items vertically */
+   /* Style the hamburger lines */
+  .hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff; /* White lines */
+    margin: 5px auto;
+    transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+  }
+  body.dark-mode .hamburger-line {
+    background-color: #eee; /* Lighter lines in dark mode */
+  }
+
+  /* Original Nav List hidden */
+  nav ul.nav-list {
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    top: 100%; /* Position below the header (adjust if header height changes) */
+    top: 100%; /* Position below the header */
     left: 0;
     width: 100%;
-    background-color: #444; /* Background for the dropdown */
-    z-index: 1000;
-    padding: 10px 0; /* Padding top/bottom */
-    border-top: 1px solid #555; /* Separator line */
+    background-color: #444; /* Dropdown background */
+    z-index: 1000; /* Below header but above page content */
+    padding: 10px 0;
+    border-top: 1px solid #555;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Add shadow */
 
-    /* --- Animation Setup --- */
-    max-height: 0; /* Initially collapsed */
+    /* Animation Setup */
+    max-height: 0;
     opacity: 0;
-    overflow: hidden; /* Hide content when collapsed */
-    visibility: hidden; /* Hide from accessibility tree when closed */
+    overflow: hidden;
+    visibility: hidden;
     transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out 0.1s, visibility 0s linear 0.4s;
-     /* Delay visibility change until animation ends */
   }
 
-  /* Styles for the OPEN Nav List */
-  .nav-list.nav-list--open {
-    max-height: 500px; /* Or a sufficiently large height */
+  /* OPEN Nav List Styles */
+  nav ul.nav-list.nav-list--open {
+    max-height: 500px; /* Allow expansion */
     opacity: 1;
-    visibility: visible; /* Make visible when open */
+    visibility: visible;
     transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, visibility 0s linear 0s;
-     /* Make visible immediately at start of open animation */
   }
 
-
-   /* Styles for individual list items and links in mobile dropdown */
-  .nav-list li {
-    display: block; /* Ensure they take full width */
-    margin: 0; /* Reset horizontal margin */
-    text-align: center; /* Center text */
-    border-bottom: 1px solid #555; /* Separator lines between items */
+   /* Mobile nav list items */
+  nav ul.nav-list li {
+    display: block;
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px solid #555;
   }
-  .nav-list li:last-child {
-      border-bottom: none; /* Remove border from last item */
+  nav ul.nav-list li:last-child {
+    border-bottom: none;
   }
 
-  .nav-list li a {
-    display: block; /* Make link fill the list item */
+  nav ul.nav-list li a {
+    display: block;
     padding: 15px 20px;
-    color: #fff; /* Link color */
+    color: #fff;
     font-size: 1.1rem;
     transition: background-color 0.2s ease;
   }
 
-  .nav-list li a:hover,
-  .nav-list li a:focus {
-    background-color: #555; /* Hover/focus background */
+  nav ul.nav-list li a:hover,
+  nav ul.nav-list li a:focus {
+    background-color: #555;
     color: #eee;
   }
 
-  /* Dark Mode adjustments for the dropdown menu */
-  body.dark-mode .nav-list {
-      background-color: #2a2a2a; /* Darker background */
+  /* Dark Mode Mobile Nav */
+  body.dark-mode nav ul.nav-list {
+      background-color: #2a2a2a;
       border-top-color: #444;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   }
-   body.dark-mode .nav-list li {
+   body.dark-mode nav ul.nav-list li {
       border-bottom-color: #444;
    }
-   body.dark-mode .nav-list li a {
+   body.dark-mode nav ul.nav-list li a {
       color: #eee;
    }
-   body.dark-mode .nav-list li a:hover,
-   body.dark-mode .nav-list li a:focus {
+   body.dark-mode nav ul.nav-list li a:hover,
+   body.dark-mode nav ul.nav-list li a:focus {
       background-color: #383838;
       color: #fff;
    }
 
+  /* Hamburger Icon Animation to 'X' */
+  .hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(2) { opacity: 0; }
+  .hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-  /* --- Hamburger Icon Animation (when menu is open) --- */
-  /* Rotate top line */
-  .hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(1) {
-    transform: translateY(8px) rotate(45deg); /* Move down and rotate */
-  }
-  /* Fade out middle line */
-  .hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(2) {
-    opacity: 0;
-  }
-  /* Rotate bottom line */
-  .hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg); /* Move up and rotate */
-  }
+} /* End @media (max-width: 768px) */
 
-} /* End of @media (max-width: 768px) */
+
+/* --- Layout Adjustments for Wider Screens (Optional Example) --- */
+@media (min-width: 769px) { /* Apply styles ABOVE 768px */
+    /* Ensure hero side-by-side layout applies */
+    .hero-section { text-align: left; }
+    .hero-container { flex-direction: row; justify-content: space-between; }
+    .hero-content { flex: 2; padding-right: 30px; }
+    .hero-image-container { flex: 1; width: auto; text-align: right; }
+    .hero-cta { justify-content: flex-start; }
+
+    /* Ensure desktop nav is visible and hamburger hidden */
+     .hamburger-btn { display: none; }
+     nav ul.nav-list {
+         /* Reset mobile styles */
+         display: flex;
+         flex-direction: row;
+         position: static;
+         width: auto;
+         background-color: transparent;
+         z-index: auto;
+         padding: 0;
+         border-top: none;
+         box-shadow: none;
+         max-height: none;
+         opacity: 1;
+         overflow: visible;
+         visibility: visible;
+         /* Re-apply desktop layout */
+         justify-content: center;
+     }
+     nav ul.nav-list li {
+         display: inline;
+         margin: 0 15px;
+         text-align: left;
+         border-bottom: none;
+     }
+      nav ul.nav-list li a {
+         display: inline-block; /* Reset from block */
+         padding: 10px 15px;
+         color: #fff;
+         font-size: 1rem; /* Reset font size */
+     }
+      nav ul.nav-list li a:hover {
+        background-color: #555;
+        color: #ddd;
+     }
+     /* ============================================================ */
+/* === NEW: Recommendations Section Styles                 === */
+/* ============================================================ */
+
+.recommendations .container {
+  max-width: 1200px; /* Centered container */
+  margin: 0 auto;
+  background-color: #f7f7f7; 
+}
+
+.recommendations-grid {
+display: grid;
+/* Adjust minmax based on desired card width vs number of columns */
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+gap: 30px;
+margin-top: 30px;
+}
+
+.recommendation-item {
+background-color: #fff; /* Match container or project item background */
+padding: 30px;
+border-radius: 8px; /* Match other cards */
+border: 1px solid #eee; /* Match other cards */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Match other cards */
+display: flex;
+flex-direction: column; /* Ensure author is below quote */
+transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add hover effect */
+}
+
+.recommendation-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+
+.recommendation-text {
+font-size: 1.05rem;
+font-style: italic;
+color: #555; /* Quote text color */
+margin: 0 0 25px 0; /* Remove default blockquote margin, add bottom margin */
+padding: 0;
+border-left: 4px solid #3d93a7; /* Add accent border */
+padding-left: 20px;
+line-height: 1.7;
+flex-grow: 1; /* Allow quote to take up space */
+}
+
+/* Optional: Add quote marks visually */
+/*
+.recommendation-text::before {
+  content: '“';
+  font-size: 2.5em;
+  color: #e0e0e0;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  line-height: 1;
+}
+*/
+
+.recommendation-author {
+display: flex;
+align-items: center;
+margin-top: auto; /* Push author to the bottom */
+padding-top: 20px; /* Space above author */
+border-top: 1px solid #f0f0f0; /* Subtle separator */
+}
+
+.recommendation-image {
+width: 60px; /* Size of the image */
+height: 60px;
+border-radius: 50%; /* Circular image */
+object-fit: cover; /* Cover the area */
+margin-right: 15px; /* Space between image and text */
+flex-shrink: 0; /* Prevent image shrinking */
+border: 2px solid #eee; /* Optional subtle border */
+}
+
+.author-details {
+line-height: 1.4;
+}
+
+.author-name strong {
+color: #333; /* Author name color */
+font-size: 1rem;
+}
+
+.author-title {
+color: #777; /* Title color */
+font-size: 0.9rem;
+}
+
+/* --- Dark Mode Recommendations --- */
+body.dark-mode .recommendations .container {
+  background-color: #222; /* Darker background */
+  color: #ccc; /* Text color */
+}
+
+body.dark-mode .recommendation-item {
+  background-color: #2a2a2a; /* Match dark project item */
+  border-color: #444;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .recommendation-item:hover {
+  box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+}
+
+body.dark-mode .recommendation-text {
+  color: #ccc;
+  border-left-color: #4db8d2; /* Dark mode accent */
+}
+
+/* body.dark-mode .recommendation-text::before { color: #333; } */ /* Adjust quote mark color */
+
+body.dark-mode .recommendation-author {
+  border-top-color: #444;
+}
+
+body.dark-mode .recommendation-image {
+  border-color: #555;
+}
+
+body.dark-mode .author-name strong {
+  color: #eee;
+}
+
+body.dark-mode .author-title {
+  color: #aaa;
+}
+
+}
