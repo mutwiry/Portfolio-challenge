@@ -647,4 +647,293 @@ body.dark-mode .status-sending { color: #8ab4f8; }
     .skills-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); } /* Adjust min size */
     .projects-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); } /* Adjust min size */
     .recommendations-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } /* Adjust min size */
+  /* ============================================================ */
+/* === Styles Specific to Enhanced Education Page          === */
+/* ============================================================ */
+
+/* Spacing for main blocks */
+.formal-education-block,
+.certifications-block {
+  margin-bottom: 50px; /* More space between blocks */
+}
+
+/* Formal Education specific styling */
+.formal-education-block h3 {
+  font-size: 1.6rem;
+  color: #3d93a7;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+.formal-education-block .education-item p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+.formal-education-block .education-item p strong {
+    font-weight: 600;
+    color: #333;
+}
+.formal-education-block .education-item p em {
+    color: #777;
+    font-style: italic;
+}
+
+
+/* Certifications Block Styling */
+.certifications-block h3 {
+  font-size: 1.6rem;
+  color: #3d93a7;
+  margin-bottom: 15px; /* Space below heading before intro p */
+  text-align: center; /* Center subheading */
+}
+.certifications-block .section-intro { /* Style the intro paragraph */
+   font-size: 1.05rem;
+   color: #555;
+   line-height: 1.7;
+   margin-bottom: 40px; /* Space before grid */
+}
+
+
+/* Grid layout for certificates */
+.certifications-grid {
+  display: grid;
+  /* Adjust minmax: 280px is good for cards with images */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Individual Certificate Card Styling */
+.certificate-item {
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.07);
+  padding: 20px;
+  display: flex; /* Align image and text side-by-side */
+  align-items: center; /* Vertically center content */
+  gap: 20px; /* Space between image and text */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.certificate-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.certificate-image-container {
+  flex-shrink: 0; /* Don't shrink image container */
+  width: 70px; /* Control logo width */
+  height: 70px; /* Control logo height */
+  /* Optional: Add background if logos are transparent */
+  /* background-color: #f0f0f0; */
+  /* border-radius: 4px; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.certificate-logo {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Scale logo nicely */
+}
+
+.certificate-details {
+  flex-grow: 1; /* Allow text to take remaining space */
+  line-height: 1.5;
+}
+
+.certificate-details h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.certificate-issuer,
+.certificate-date {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 3px;
+}
+
+.certificate-details .button { /* Style verify button if added */
+    margin-top: 10px;
+    padding: 5px 12px; /* Make it smaller */
+    font-size: 0.8rem;
+}
+
+/* --- Dark Mode for Education Page --- */
+body.dark-mode .formal-education-block h3 { color: #4db8d2; border-bottom-color: #444; }
+body.dark-mode .formal-education-block .education-item p strong { color: #eee; }
+body.dark-mode .formal-education-block .education-item p em { color: #aaa; }
+
+body.dark-mode .certifications-block h3 { color: #4db8d2; }
+body.dark-mode .certifications-block .section-intro { color: #ccc; }
+
+body.dark-mode .certificate-item { background-color: #2a2a2a; border-color: #444; box-shadow: 0 3px 8px rgba(0,0,0,0.25); }
+body.dark-mode .certificate-item:hover { box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
+body.dark-mode .certificate-details h4 { color: #eee; }
+body.dark-mode .certificate-issuer,
+body.dark-mode .certificate-date { color: #aaa; }
+/* Dark mode button handled globally */
+
+/* --- Responsive for Education Page --- */
+@media (max-width: 768px) {
+    .formal-education-block h3,
+    .certifications-block h3 {
+        font-size: 1.4rem; /* Slightly smaller headings */
+        text-align: center;
+    }
+     .certifications-grid {
+        grid-template-columns: 1fr; /* Stack cards */
+        gap: 20px;
+    }
+    /* Optional: Stack image and text within card on very small screens */
+    /* @media (max-width: 480px) {
+        .certificate-item {
+            flex-direction: column;
+            text-align: center;
+        }
+        .certificate-image-container {
+            margin-bottom: 15px;
+        }
+    } */
+}  
+/* ============================================================ */
+/* === Styles Specific to Experience Page                  === */
+/* ============================================================ */
+
+/* Optional Intro Paragraph */
+.experience .section-intro {
+  /* Existing p styles likely fine, add specifics if needed */
+  font-size: 1.1rem;
+  /* color: #555; */
+}
+
+.experience-entry {
+display: flex;
+gap: 25px; /* Space between logo and details */
+margin-bottom: 40px; /* Space between entries */
+padding-bottom: 30px; /* Space below content before border */
+border-bottom: 1px solid #eee; /* Separator line */
+}
+.experience-entry:last-of-type {
+  border-bottom: none; /* No border on the last item */
+  margin-bottom: 0; /* Adjust margin if CV button follows */
+}
+
+.experience-logo-container {
+flex-shrink: 0; /* Prevent shrinking */
+width: 90px; /* Adjust logo container width */
+/* Optional: Center logo vertically if container is taller */
+/* display: flex; */
+/* align-items: center; */
+}
+
+.experience-logo {
+display: block;
+max-width: 100%;
+height: auto;
+/* Optional: Add subtle styling */
+/* border-radius: 4px; */
+/* border: 1px solid #ddd; */
+}
+
+.experience-details {
+flex-grow: 1; /* Take remaining space */
+}
+
+.experience-details h3 {
+font-size: 1.4rem; /* Job title size */
+color: #333;
+margin-bottom: 3px; /* Less space below title */
+font-weight: 600;
+}
+
+.experience-company a,
+.experience-company strong {
+  font-weight: 600;
+  color: #444; /* Company name color */
+  font-size: 1.05rem;
+}
+.experience-company a:hover {
+  color: #007bff; /* Example hover */
+}
+.experience-company {
+  margin-bottom: 5px; /* Space below company */
+}
+
+
+.experience-dates {
+display: block;
+font-style: italic;
+color: #777;
+margin-bottom: 15px;
+font-size: 0.95rem;
+}
+
+.experience-details h4 {
+font-size: 1rem; /* Smaller heading for responsibilities */
+color: #555;
+margin-bottom: 10px;
+margin-top: 5px; /* Space above heading */
+font-weight: 600;
+text-transform: uppercase; /* Optional styling */
+letter-spacing: 0.5px; /* Optional styling */
+}
+
+.experience-details ul {
+list-style: disc;
+margin-left: 20px;
+padding-left: 0;
+}
+
+.experience-details li {
+margin-bottom: 8px;
+color: #555;
+line-height: 1.7;
+}
+
+/* --- Dark Mode Experience Page --- */
+body.dark-mode #experience .section-intro { color: #ccc; }
+body.dark-mode .experience-entry { border-bottom-color: #444; }
+body.dark-mode .experience-logo { background-color: #333;  border-color: #555;  }
+body.dark-mode .experience-details h3 { color: #eee; }
+body.dark-mode .experience-company a, body.dark-mode .experience-company strong { color: #ddd; }
+body.dark-mode .experience-company a:hover { color: #aecbfa; }
+body.dark-mode .experience-dates { color: #aaa; }
+body.dark-mode .experience-details h4 { color: #bbb; }
+body.dark-mode .experience-details li { color: #ccc; }
+
+/* --- Responsive Experience Page --- */
+@media (max-width: 768px) {
+.experience-entry {
+  flex-direction: column; /* Stack logo and details */
+  gap: 15px; /* Adjust gap */
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+}
+.experience-logo-container {
+  width: 80px; /* Maintain logo size or adjust */
+  margin: 0 auto 10px auto; /* Center logo, add space below */
+  /* Remove flex alignment if used */
+  /* display: block; */
+}
+.experience-details {
+  text-align: center; /* Center headings */
+}
+.experience-details ul {
+  text-align: left; /* Keep list items left-aligned */
+  margin-left: auto; /* Center the list block */
+  margin-right: auto;
+  max-width: 90%; /* Prevent list from touching edges */
+  padding-left: 20px; /* Ensure bullets are visible */
+}
+ .experience-details h4 {
+     margin-top: 15px; /* More space above heading */
+ }
+}
 }
