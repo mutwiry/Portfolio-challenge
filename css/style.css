@@ -590,7 +590,7 @@ body.dark-mode .status-sending { color: #8ab4f8; }
   .approach-section > p { font-size: 1rem; margin-bottom: 30px; }
   .approach-grid { grid-template-columns: 1fr; gap: 20px; }
   .approach-item { padding: 25px 20px; }
-  #about .cta h3 { font-size: 1.4rem; }
+  .about .cta h3 { font-size: 1.4rem; }
 
   /* Skills Page Responsive */
   .skills-intro { font-size: 1rem; margin-bottom: 30px; }
@@ -727,10 +727,16 @@ body.dark-mode .status-sending { color: #8ab4f8; }
   height: 70px; /* Control logo height */
   /* Optional: Add background if logos are transparent */
   /* background-color: #f0f0f0; */
-  /* border-radius: 4px; */
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
+   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 60%; /* Responsive max width */
+  margin: 0 auto 20px auto; /* Center image in container */
+  /* Optional: Add border or shadow to image container */
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 4px; /* Rounded corners */
 }
 
 .certificate-logo {
