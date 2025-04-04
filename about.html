@@ -42,14 +42,89 @@
             </nav>
            </header>
     <main>
-            <!--About Section-->
-            <section class="animate-fade animate-delay-1" id="contact">
-            <h1>About Me</h1>
-            <img src="images/about-placeholder.jpg" alt="Vincent at work" style="width:100%; max-width:400px;">
-            <p>I specialize in instructional design, product development, and quality assurance for EdTech platforms. My mission is to build learning experiences that are inclusive, tech-forward, and grounded in solid pedagogy.</p>
-        </section>
-        </main>  
+        <!-- =======================
+     About Section - Restructured
+     ======================== -->
+<section id="about" class="animate-fade">
+    <div class="container">
 
+        <!-- Optional Anchor -->
+        <div class="anchor" id="about-anchor"></div>
+
+        <!-- 1. Section Heading -->
+        <h2>About Me</h2>
+
+        <!-- 2. Introductory Paragraph -->
+        <p class="about-intro"> <!-- Added a class for potential specific styling -->
+            Hello! I'm Vincent Mutwiri. I thrive at the intersection of **Instructional Design** and **Web Development**, dedicated to crafting digital experiences that are not only effective and engaging for learners but also technically robust and user-friendly.
+        </p>
+
+        <!-- 3. Image + Mission/Bio Grid -->
+        <div class="about-details-grid animate-fade animate-delay-1"> <!-- New grid for this part -->
+            <div class="about-image"> <!-- Keep existing class -->
+                <img src="Images/professional_headshot.jpg" alt="Vincent Mutwiri - Instructional Designer & Web Developer">
+            </div>
+            <div class="about-bio"> <!-- New class for the bio text -->
+                <h3>My Mission & Focus</h3>
+                <p>
+                    My goal is to bridge the gap between educational goals and technological possibilities. Whether designing an intuitive e-learning module or developing a seamless web application, I focus on creating **user-centered solutions** that prioritize accessibility, clarity, and measurable outcomes.
+                </p>
+                <p>
+                    My Computer Science background provides the technical foundation, while my passion for EdTech drives my commitment to innovative and impactful learning design.
+                </p>
+                <!-- Optional: Add a very short quote or personal value statement -->
+                <!-- <blockquote>"Creating with purpose, learning through technology."</blockquote> -->
+            </div>
+        </div> <!-- End .about-details-grid -->
+
+        <!-- 4. Approach/Philosophy Section -->
+        <div class="approach-section animate-fade animate-delay-2">
+            <h3>My Approach</h3>
+            <p>I believe in a collaborative and iterative process, focusing on:</p>
+            <div class="approach-grid"> <!-- Grid for distinct points -->
+
+                <div class="approach-item">
+                    <div class="approach-icon">💡</div> <!-- Placeholder Icon -->
+                    <h4>Learner-Centric Design</h4>
+                    <p>Understanding audience needs and tailoring content and interactions for maximum engagement and retention.</p>
+                </div>
+
+                <div class="approach-item">
+                    <div class="approach-icon">💻</div> <!-- Placeholder Icon -->
+                    <h4>Technology Integration</h4>
+                    <p>Leveraging the right tools (Figma, Articulate, React, etc.) to build effective, accessible, and modern solutions.</p>
+                </div>
+
+                <div class="approach-item">
+                    <div class="approach-icon">⭐</div> <!-- Placeholder Icon -->
+                    <h4>Quality & Accessibility</h4>
+                    <p>Ensuring solutions are robust, meet WCAG standards, and provide a seamless experience for all users.</p>
+                </div>
+
+                 <div class="approach-item">
+                    <div class="approach-icon">🔄</div> <!-- Placeholder Icon -->
+                    <h4>Iterative Improvement</h4>
+                    <p>Using feedback and data to refine designs and development for continuous enhancement.</p>
+                </div>
+
+            </div> <!-- End .approach-grid -->
+        </div> <!-- End .approach-section -->
+
+        <!-- 5. Call to Action Area -->
+        <div class="cta section-cta animate-fade animate-delay-3"> <!-- Apply animation -->
+            <h3>Ready to Collaborate?</h3>
+            <p>
+                Let's discuss how my skills can help bring your vision to life. Explore my portfolio or get in touch directly.
+            </p>
+            <a href="projects.html" class="button button-primary">View My Projects</a>
+            <a href="contact.html" class="button button-secondary">Contact Me</a>
+        </div>
+
+    </div> <!-- End .container -->
+</section>
+<!-- =======================
+     End of About Section
+     ======================== -->
     </main>
     
     
