@@ -1,6 +1,3 @@
-/* ============================================================ */
-/* === 1. Basic Resets & Defaults                          === */
-/* ============================================================ */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,20 +23,17 @@ body {
 }
 
 a {
-  color: #333; /* Base link color */
+  color: #333;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #555; /* Base link hover color */
+  color: #555;
 }
 
-/* ============================================================ */
-/* === 2. Layout Structure (Header, Nav, Main, Footer)     === */
-/* ============================================================ */
 main {
-  max-width: 1200px; /* Use consistent max-width */
+  max-width: 1200px;
   margin: 20px auto;
   padding: 0 20px;
 }
@@ -51,17 +45,15 @@ header {
   text-align: center;
   position: sticky;
   top: 0;
-  z-index: 1000; /* Ensure header is above most things */
+  z-index: 1000;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* --- Base Desktop Navigation --- */
 nav {
-    /* Container for nav elements */
-    position: relative; /* Needed for absolute positioning of mobile menu/button */
+  position: relative;
 }
 
-nav ul.nav-list { /* Added .nav-list class */
+nav ul.nav-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -94,84 +86,73 @@ footer {
   padding: 20px 0;
   position: relative;
   width: 100%;
-  border-top: 1px solid #444; /* Darker border for footer */
+  border-top: 1px solid #444;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, color 0.3s ease;
-  margin-top: 40px; /* Add space above footer */
+  margin-top: 40px;
 }
 
 footer p {
-  margin-bottom: 10px; /* Space below paragraphs */
+  margin-bottom: 10px;
   font-size: 0.9rem;
 }
 footer p:last-of-type {
-    margin-bottom: 0; /* No margin on last paragraph */
+    margin-bottom: 0;
 }
 
 footer a {
-  color: #161515; /* Footer links white */
+  color: #161515;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 footer a:hover {
-  color: #ccc; /* Lighter hover for footer links */
+  color: #ccc;
 }
 
-
-/* ============================================================ */
-/* === 3. Common Components & Containers                   === */
-/* ============================================================ */
-
-/* --- Base Container Styling --- */
 .container {
-  /* Applied within sections */
-  max-width: 1200px; /* Consistent max width */
-  margin: 0 auto; /* Center within parent */
-  padding: 30px 20px; /* Default padding */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
   background-color: #ffffff;
-  border-radius: 8px; /* Slightly softer radius */
+  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   margin-bottom: 40px;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #eee; /* Subtle border */
+  border: 1px solid #eee;
 }
 
-/* --- Section Base Styling --- */
 section {
-  /* Generally holds a .container */
-  scroll-margin-top: 80px; /* Adjust if header height changes */
-  padding: 40px 0; /* Vertical padding on the section */
-  margin: 0; /* Remove margin if .container handles spacing */
-  background-color: transparent; /* Section itself is transparent */
+  scroll-margin-top: 80px;
+  padding: 40px 0;
+  margin: 0;
+  background-color: transparent;
   border-radius: 0;
   box-shadow: none;
   border: none;
   position: relative;
-  overflow: hidden; /* Keep this */
-  /* Remove transitions handled by .container or body */
+  overflow: hidden;
 }
 
 section h2 {
-  /* Default section heading style */
-  margin-bottom: 30px; /* More space below heading */
-  font-size: 2rem; /* Larger section headings */
+  margin-bottom: 30px;
+  font-size: 2rem;
   color: #333;
   text-align: center;
   font-weight: 600;
 }
 
 body.dark-mode section h2 {
-    color: #eee; /* Light heading in dark mode */
+  color: #eee;
 }
-/* Specific heading color inside containers */
+
 .container h2 {
-  color: #3d93a7; /* Theme color for headings inside containers */
-  margin-bottom: 25px; /* Adjust space */
-  font-size: 1.8rem; /* Slightly smaller than section h2 */
+  color: #3d93a7;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
 }
 body.dark-mode .container h2 {
-   color: #4db8d2; /* Lighter theme color */
+   color: #4db8d2;
 }
 
 .container p {
@@ -182,15 +163,13 @@ body.dark-mode .container p {
    color: #ccc;
 }
 
-
-/* --- Button Base & Variants --- */
 .button, button[type="submit"] {
   display: inline-block;
   background-color: #333;
   color: #fff;
-  padding: 12px 25px; /* Slightly larger padding */
+  padding: 12px 25px;
   text-decoration: none;
-  border: 2px solid #333; /* Add border for consistency */
+  border: 2px solid #333;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
@@ -201,11 +180,10 @@ body.dark-mode .container p {
 .button:hover, button[type="submit"]:hover {
   background-color: #555;
   border-color: #555;
-  transform: translateY(-2px); /* Subtle lift on hover */
+  transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* --- Defined Button Variants --- */
 .button-primary {
   background-color: #333;
   color: #fff;
@@ -241,9 +219,7 @@ body.dark-mode .container p {
     font-size: 0.9rem;
 }
 
-
-/* --- Image Styling --- */
-.resize-image { /* Primarily for Hero */
+.resize-image {
   width: 250px;
   height: 250px;
   object-fit: cover;
@@ -251,15 +227,9 @@ body.dark-mode .container p {
   margin: 20px auto;
   display: block;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  border: 4px solid #a1bbba; /* Slightly thicker border */
+  border: 4px solid #a1bbba;
 }
 
-
-/* ============================================================ */
-/* === 4. Specific Section Styles                          === */
-/* ============================================================ */
-
-/* --- 4.1 Hero Section --- */
 .hero-section {
   padding: 60px 0;
   background-color: #e0e0e0;
@@ -287,8 +257,6 @@ body.dark-mode .container p {
 .hero-image-container .resize-image { max-width: 100%; height: auto; border-width: 4px; margin: 0 auto; }
 .hero-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px; }
 
-/* --- 4.2 About Me Section --- */
-/* Restructured About Page Styles */
 .about-intro {
   text-align: center;
   font-size: 1.1rem;
@@ -334,9 +302,6 @@ body.dark-mode .container p {
 #about .cta p { margin-bottom: 25px; color: #555; max-width: 600px; margin-left: auto; margin-right: auto; }
 #about .cta .button { margin: 5px 10px; }
 
-
-/* --- 4.3 Skills Section --- */
-/* Optional Intro paragraph style */
 .skills-intro {
   text-align: center;
   max-width: 850px;
@@ -344,7 +309,6 @@ body.dark-mode .container p {
   font-size: 1.1rem;
   color: #444;
 }
-/* Skills Grid uses existing styles */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -365,11 +329,10 @@ body.dark-mode .container p {
 }
 .skill-category h4 { margin-bottom: 15px; font-size: 1.2rem; color: #3d93a7; border-bottom: 2px solid #e0e0e0; padding-bottom: 8px; }
 .skill-category ul { list-style: none; padding-left: 0; margin: 0; }
-.skill-category li { margin-bottom: 10px; color: #555; position: relative; padding-left: 20px; line-height: 1.5; /* Added line-height */ }
+.skill-category li { margin-bottom: 10px; color: #555; position: relative; padding-left: 20px; line-height: 1.5; }
 .skill-category li::before { content: '✓'; position: absolute; left: 0; color: #3d93a7; font-weight: bold; }
-.skill-category li strong { font-weight: 600; color: #444; } /* Style sub-category text */
+.skill-category li strong { font-weight: 600; color: #444; }
 
-/* Methodology section within Skills Page */
 .methodology-section {
   margin-top: 50px;
   padding-top: 30px;
@@ -381,12 +344,9 @@ body.dark-mode .container p {
   margin-bottom: 30px;
   color: #333;
 }
-/* Reuses .approach-grid and .approach-item styles */
-.methodology-section .approach-item h4 { font-size: 1.15rem; } /* Slightly smaller heading */
+.methodology-section .approach-item h4 { font-size: 1.15rem; }
 .methodology-section .approach-item p { font-size: 0.95rem; }
 
-
-/* --- 4.4 Projects Section --- */
 #projects > .container > p:first-of-type { text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; margin-bottom: 30px; }
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
 .project-item { display: flex; flex-direction: column; background-color: #fff; border: 1px solid #eee; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); overflow: hidden; transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; padding: 0; margin: 0; text-align: left; }
@@ -397,27 +357,60 @@ body.dark-mode .container p {
 .project-item p { font-size: 1rem; color: #666; margin-bottom: 15px; flex-grow: 1; }
 .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 15px; margin-bottom: 15px; }
 .project-tags span { background-color: #e9e9e9; color: #555; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: 500; }
+.project-role { font-size: 0.95rem; color: #777; margin-bottom: 15px; font-style: italic; }
+.project-role strong { font-style: normal; color: #555; font-weight: 600; }
+.project-links { margin-top: auto; padding-top: 15px; display: flex; flex-wrap: wrap; gap: 10px; }
+.project-links .button.button-small { margin-top: 0; }
 .project-item a.button { margin: 0; align-self: flex-start; margin-top: auto; }
 .section-cta { text-align: center; margin-top: 40px; }
 
-/* --- 4.5 Experience Section --- */
 .experience-item { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px dashed #ddd; }
 .experience-item:last-child { border-bottom: none; }
-.experience-item h4 { font-size: 1.25rem; color: #333; margin-bottom: 5px; }
+.experience-entry { display: flex; gap: 25px; margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid #eee; }
+.experience-entry:last-of-type { border-bottom: none; margin-bottom: 0; }
+.experience-logo-container { flex-shrink: 0; width: 90px; }
+.experience-logo { display: block; max-width: 100%; height: auto; }
+.experience-details { flex-grow: 1; }
+.experience-details h3 { font-size: 1.4rem; color: #333; margin-bottom: 3px; font-weight: 600; }
+.experience-company a, .experience-company strong { font-weight: 600; color: #444; font-size: 1.05rem; }
+.experience-company a:hover { color: #007bff; }
+.experience-company { margin-bottom: 5px; }
 .experience-dates { display: block; font-style: italic; color: #777; margin-bottom: 15px; font-size: 0.95rem; }
-.experience-item ul { list-style: disc; margin-left: 20px; padding-left: 0; }
-.experience-item li { margin-bottom: 8px; color: #555; line-height: 1.7; }
+.experience-details h4 { font-size: 1rem; color: #555; margin-bottom: 10px; margin-top: 5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.experience-details ul { list-style: disc; margin-left: 20px; padding-left: 0; }
+.experience-details li { margin-bottom: 8px; color: #555; line-height: 1.7; }
 
-/* --- 4.6 Education Section --- */
+.formal-education-block, .certifications-block { margin-bottom: 50px; }
+.formal-education-block h3 { font-size: 1.6rem; color: #3d93a7; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #eee; }
+.formal-education-block .education-item p { margin-bottom: 15px; line-height: 1.7; }
+.formal-education-block .education-item p strong { font-weight: 600; color: #333; }
+.formal-education-block .education-item p em { color: #777; font-style: italic; }
+.certifications-block h3 { font-size: 1.6rem; color: #3d93a7; margin-bottom: 15px; text-align: center; }
+.certifications-block .section-intro { font-size: 1.05rem; color: #555; line-height: 1.7; margin-bottom: 40px; text-align: center; max-width: 750px; margin: 0 auto 40px auto; }
+.certifications-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 30px; }
+.certificate-item { background-color: #fff; border-radius: 8px; border: 1px solid #eee; box-shadow: 0 3px 8px rgba(0,0,0,0.07); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.certificate-item:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
+.certificate-image-container { width: 100%; height: auto; aspect-ratio: 16 / 9; background-color: #fff; display: flex; align-items: center; justify-content: center; padding: 20px; border-bottom: 1px solid #eee; }
+.certificate-logo { display: block; max-width: 100%; max-height: 120px; height: auto; object-fit: contain; }
+.certificate-details { padding: 20px; flex-grow: 1; line-height: 1.5; }
+.certificate-details h4 { font-size: 1.1rem; font-weight: 600; color: #333; margin-bottom: 5px; }
+.certificate-issuer, .certificate-date { font-size: 0.9rem; color: #666; margin-bottom: 3px; }
+.certificate-details .button { margin-top: 10px; padding: 5px 12px; font-size: 0.8rem; }
 #education .button { margin-top: 20px; }
-#education p strong { color: #333; font-weight: 600; } /* Added font-weight */
-#education .section-cta { margin-top: 20px; } /* Space for buttons */
-#education .section-cta .button { margin: 5px 10px; } /* Spacing between buttons */
+#education p strong { color: #333; font-weight: 600; }
+#education .section-cta { margin-top: 20px; }
+#education .section-cta .button { margin: 5px 10px; }
 
-/* --- 4.7 Interests Section --- */
 #interests p { max-width: 800px; margin-left: auto; margin-right: auto; text-align: center; }
+#interests .section-intro { text-align: center; max-width: 800px; margin: 0 auto 40px auto; font-size: 1.05rem; color: #555; }
+.interests-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 30px; }
+.interest-item { background-color: #fff; border: 1px solid #eee; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.interest-item:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
+.interest-image { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+.interest-details { padding: 20px; flex-grow: 1; }
+.interest-details h3 { font-size: 1.3rem; color: #333; margin-bottom: 10px; font-weight: 600; }
+.interest-details p { font-size: 0.95rem; color: #555; line-height: 1.6; }
 
-/* --- 4.8 Recommendations Section --- */
 .recommendations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 30px; }
 .recommendation-item { background-color: #fff; padding: 30px; border-radius: 8px; border: 1px solid #eee; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease; }
 .recommendation-item:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
@@ -425,23 +418,29 @@ body.dark-mode .container p {
 .recommendation-author { display: flex; align-items: center; margin-top: auto; padding-top: 20px; border-top: 1px solid #f0f0f0; }
 .recommendation-image { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-right: 15px; flex-shrink: 0; border: 2px solid #eee; }
 .author-details { line-height: 1.4; }
-.author-name strong { color: #333; font-size: 1rem; font-weight: 600; } /* Added font-weight */
+.author-name strong { color: #333; font-size: 1rem; font-weight: 600; }
 .author-title { color: #777; font-size: 0.9rem; }
 
-/* --- 4.9 Contact Section --- */
 #contact h2 { margin-bottom: 10px; }
 #contact > .container > p:first-of-type { margin-bottom: 30px; text-align: center; }
-#contact form { max-width: 600px; margin: 0 auto 30px auto; }
-#contact form label { display: block; margin-bottom: 5px; font-weight: 500; }
-#contact form input[type="text"], #contact form input[type="email"], #contact form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
-#contact form textarea { resize: vertical; min-height: 120px; }
+#contact .section-intro { text-align: center; max-width: 750px; margin: 0 auto 40px auto; font-size: 1.05rem; color: #555; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px; }
+.contact-form-container, .contact-info-container { padding: 20px; }
+.contact-form-container h3, .contact-info-container h3 { font-size: 1.5rem; color: #3d93a7; margin-bottom: 20px; font-weight: 600; }
+#contact-form label { display: block; margin-bottom: 5px; font-weight: 500; }
+#contact-form input[type="text"], #contact-form input[type="email"], #contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+#contact-form textarea { resize: vertical; min-height: 120px; }
+#contact-form button.button-primary { width: 100%; padding: 14px 25px; font-size: 1.1rem; }
 #form-status { margin-top: 15px; font-weight: bold; text-align: center; }
-/* Social links are in footer now */
+.contact-info-container p { margin-bottom: 20px; line-height: 1.7; color: #555; }
+.contact-info-list { list-style: none; padding-left: 0; margin: 0; }
+.contact-info-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+.contact-icon { font-size: 1.4rem; color: #3d93a7; width: 25px; text-align: center; }
+.contact-info-list a { color: #333; text-decoration: none; font-weight: 500; }
+.contact-info-list a:hover { color: #007bff; text-decoration: underline; }
+.location-info { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; }
+.location-info h4 { font-size: 1.1rem; color: #333; margin-bottom: 10px; }
 
-
-/* ============================================================ */
-/* === 5. Utilities (Animation, Status, Toggle Switch)     === */
-/* ============================================================ */
 .status-error { color: #dc3545; font-weight: bold; }
 .status-success { color: #28a745; font-weight: bold; }
 .status-sending { color: #007bff; font-weight: bold; }
@@ -449,7 +448,7 @@ body.dark-mode .container p {
 .animate-fade { opacity: 0; animation: fadeInUp 0.8s ease-out forwards; }
 .animate-delay-1 { animation-delay: 0.2s; }
 .animate-delay-2 { animation-delay: 0.4s; }
-.animate-delay-3 { animation-delay: 0.6s; } /* Added delay 3 */
+.animate-delay-3 { animation-delay: 0.6s; }
 .switch { position: fixed; top: 20px; right: 20px; z-index: 1050; cursor: pointer; }
 .switch input { opacity: 0; width: 0; height: 0; position: absolute; }
 .slider { background-color: #555; width: 120px; height: 34px; border-radius: 34px; position: relative; transition: background-color 0.4s ease; display: flex; align-items: center; padding: 0 5px; overflow: hidden; }
@@ -457,28 +456,23 @@ body.dark-mode .container p {
 .slider .icon { font-size: 1.4rem; line-height: 1; transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
 .slider .mode-text { font-size: 0.9rem; margin-left: 8px; color: #f5f5f5; white-space: nowrap; font-weight: 500; transition: color 0.3s ease; }
 input:checked + .slider { background-color: #ccc; }
-input:checked + .slider .slider-content { left: calc(120px - 5px - 105px); /* Adjust 105px based on content */ }
+input:checked + .slider .slider-content { left: calc(120px - 5px - 105px); }
 input:checked + .slider .icon { transform: rotate(360deg); }
 input:checked + .slider .mode-text { color: #333; }
-.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
+.sr-only { border: 0; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; white-space: nowrap; }
 
-
-/* ============================================================ */
-/* === 6. Dark Mode Styles                                 === */
-/* ============================================================ */
 body.dark-mode { background-color: #121212; color: #e0e0e0; }
 body.dark-mode header { background-color: #1e1e1e; border-bottom-color: #333; }
 body.dark-mode footer { background-color: #1e1e1e; color: #ccc; border-top-color: #333; }
 body.dark-mode footer a { color: #8ab4f8; }
 body.dark-mode footer a:hover { color: #aecbfa; }
 body.dark-mode .container { background-color: #1e1e1e; color: #e0e0e0; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); border-color: #333; }
-body.dark-mode section h2 { color: #eee; } /* General section heading */
-body.dark-mode .container h2 { color: #4db8d2; } /* Container heading */
+body.dark-mode section h2 { color: #eee; }
+body.dark-mode .container h2 { color: #4db8d2; }
 body.dark-mode .container p { color: #ccc; }
 body.dark-mode a { color: #8ab4f8; }
 body.dark-mode a:hover { color: #aecbfa; }
 
-/* Dark Mode Buttons */
 body.dark-mode .button, body.dark-mode button[type="submit"] { background-color: #333; color: #eee; border-color: #555; }
 body.dark-mode .button:hover, body.dark-mode button[type="submit"]:hover { background-color: #444; border-color: #666; box-shadow: 0 4px 8px rgba(0,0,0,0.25); }
 body.dark-mode .button-primary { background-color: #4db8d2; color: #121212; border-color: #4db8d2; }
@@ -488,7 +482,6 @@ body.dark-mode .button-secondary:hover { background-color: #4db8d2; color: #1212
 body.dark-mode .button-outline { color: #ccc; border-color: #555; }
 body.dark-mode .button-outline:hover { background-color: #2a2a2a; border-color: #777; }
 
-/* Dark Mode Specific Sections */
 body.dark-mode .hero-section { background-color: #1f1f1f; }
 body.dark-mode .hero-content h1 { color: #f0f0f0; }
 body.dark-mode .hero-content h2 { color: #bdbdbd; }
@@ -500,7 +493,7 @@ body.dark-mode .about-bio h3 { color: #4db8d2; }
 body.dark-mode .about-bio p { color: #ccc; }
 body.dark-mode .about-bio blockquote { color: #aaa; border-left-color: #555; }
 body.dark-mode .about-image img { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25); }
-body.dark-mode .approach-section h3 { color: #eee; }
+body.dark-mode .approach-section h3 { color: #e0e0e0; }
 body.dark-mode .approach-section > p { color: #ccc; }
 body.dark-mode .approach-item { background-color: #2a2a2a; border-color: #444; box-shadow: 0 3px 8px rgba(0,0,0,0.25); }
 body.dark-mode .approach-item:hover { box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
@@ -518,8 +511,7 @@ body.dark-mode .skill-category li { color: #ccc; }
 body.dark-mode .skill-category li::before { color: #6cd2e8; }
 body.dark-mode .skill-category li strong { color: #ddd; }
 body.dark-mode .methodology-section { border-top-color: #444; }
-body.dark-mode .methodology-section h3 { color: #eee; }
-/* Methodology reuses approach item styles */
+body.dark-mode .methodology-section h3 { color: #e0e0e0; }
 
 body.dark-mode .project-item { background-color: #2a2a2a; border-color: #444; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
 body.dark-mode .project-item:hover { box-shadow: 0 8px 16px rgba(0,0,0,0.25); }
@@ -527,15 +519,35 @@ body.dark-mode .project-thumbnail { background-color: #333; border-bottom-color:
 body.dark-mode .project-item h3 { color: #eee; }
 body.dark-mode .project-item p { color: #bbb; }
 body.dark-mode .project-tags span { background-color: #444; color: #ccc; }
+body.dark-mode .project-role { color: #aaa; }
+body.dark-mode .project-role strong { color: #ccc; }
 
-body.dark-mode .experience-item { border-bottom-color: #444; }
-body.dark-mode .experience-item h4 { color: #eee; }
+body.dark-mode .experience-entry { border-bottom-color: #444; }
+body.dark-mode .experience-logo { background-color: #333; border-color: #555; }
+body.dark-mode .experience-details h3 { color: #eee; }
+body.dark-mode .experience-company a, body.dark-mode .experience-company strong { color: #ddd; }
+body.dark-mode .experience-company a:hover { color: #aecbfa; }
 body.dark-mode .experience-dates { color: #aaa; }
-body.dark-mode .experience-item li { color: #ccc; }
+body.dark-mode .experience-details h4 { color: #bbb; }
+body.dark-mode .experience-details li { color: #ccc; }
 
-body.dark-mode #education p strong { color: #eee; }
+body.dark-mode .formal-education-block h3 { color: #4db8d2; border-bottom-color: #444; }
+body.dark-mode .formal-education-block .education-item p strong { color: #e0e0e0; }
+body.dark-mode .formal-education-block .education-item p em { color: #aaa; }
+body.dark-mode .certifications-block h3 { color: #4db8d2; }
+body.dark-mode .certifications-block .section-intro { color: #ccc; }
+body.dark-mode .certificate-item { background-color: #2a2a2a; border-color: #444; box-shadow: 0 3px 8px rgba(0,0,0,0.25); }
+body.dark-mode .certificate-item:hover { box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
+body.dark-mode .certificate-image-container { background-color: #3a3a3a; border-color: #555; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+body.dark-mode .certificate-details h4 { color: #eee; }
+body.dark-mode .certificate-issuer, body.dark-mode .certificate-date { color: #aaa; }
 
-body.dark-mode #interests p { color: #ccc; }
+body.dark-mode #interests .section-intro { color: #ccc; }
+body.dark-mode .interest-item { background-color: #2a2a2a; border-color: #444; box-shadow: 0 4px 10px rgba(0,0,0,0.25); }
+body.dark-mode .interest-item:hover { box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
+body.dark-mode .interest-details h3 { color: #eee; }
+body.dark-mode .interest-details p { color: #ccc; }
+body.dark-mode .interest-image { background-color: #333; }
 
 body.dark-mode .recommendation-item { background-color: #2a2a2a; border-color: #444; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); }
 body.dark-mode .recommendation-item:hover { box-shadow: 0 6px 15px rgba(0,0,0,0.35); }
@@ -545,6 +557,14 @@ body.dark-mode .recommendation-image { border-color: #555; }
 body.dark-mode .author-name strong { color: #eee; }
 body.dark-mode .author-title { color: #aaa; }
 
+body.dark-mode #contact .section-intro { color: #ccc; }
+body.dark-mode .contact-form-container h3, body.dark-mode .contact-info-container h3 { color: #4db8d2; }
+body.dark-mode .contact-info-container p { color: #ccc; }
+body.dark-mode .contact-info-list a { color: #8ab4f8; }
+body.dark-mode .contact-info-list a:hover { color: #aecbfa; }
+body.dark-mode .contact-icon { color: #4db8d2; }
+body.dark-mode .location-info { border-top-color: #444; }
+body.dark-mode .location-info h4 { color: #eee; }
 body.dark-mode #contact form label { color: #ccc; }
 body.dark-mode #contact form input, body.dark-mode #contact form textarea { background-color: #2a2a2a; border-color: #555; color: #eee; }
 body.dark-mode #contact form input::placeholder, body.dark-mode #contact form textarea::placeholder { color: #888; }
@@ -555,31 +575,21 @@ body.dark-mode .status-error { color: #ff6b6b; }
 body.dark-mode .status-success { color: #63e6be; }
 body.dark-mode .status-sending { color: #8ab4f8; }
 
-
-/* ============================================================ */
-/* === 7. Responsive Styles (Media Queries)                === */
-/* ============================================================ */
-
-/* --- Styles for Mobile View (<= 768px) --- */
 @media (max-width: 768px) {
-
-  /* Layout Adjustments */
   main { padding: 0 15px; margin-top: 10px; margin-bottom: 10px; }
-  header { position: relative; min-height: 60px; /* Keep sticky unless problems */ }
+  header { position: relative; min-height: 60px; }
   .switch { top: 12px; right: 15px; }
   section { padding: 30px 0; }
   .container { padding: 20px 15px; margin-bottom: 30px; }
   section h2 { font-size: 1.6rem; margin-bottom: 20px; }
   .container h2 { font-size: 1.5rem; }
 
-  /* Hero Adjustments */
   .hero-section { padding: 40px 0; }
   .hero-content h1 { font-size: 2.2rem; }
   .hero-content h2 { font-size: 1.2rem; }
   .hero-image-container { width: 60%; max-width: 200px; }
   .resize-image { width: 180px; height: 180px; }
 
-  /* About Page Responsive */
   .about-intro { font-size: 1rem; margin-bottom: 30px; }
   .about-details-grid { grid-template-columns: 1fr; gap: 25px; margin-bottom: 40px; }
   .about-details-grid .about-image { max-width: 60%; margin: 0 auto 20px auto; }
@@ -590,17 +600,40 @@ body.dark-mode .status-sending { color: #8ab4f8; }
   .approach-section > p { font-size: 1rem; margin-bottom: 30px; }
   .approach-grid { grid-template-columns: 1fr; gap: 20px; }
   .approach-item { padding: 25px 20px; }
-  .about .cta h3 { font-size: 1.4rem; }
+  #about .cta h3 { font-size: 1.4rem; }
 
-  /* Skills Page Responsive */
   .skills-intro { font-size: 1rem; margin-bottom: 30px; }
-  .skills-grid { grid-template-columns: 1fr; gap: 20px; } /* Stack skill categories */
+  .skills-grid { grid-template-columns: 1fr; gap: 20px; }
   .methodology-section h3 { font-size: 1.5rem; }
 
-  /* Recommendations Responsive */
+  .projects-grid { grid-template-columns: 1fr; gap: 25px; }
+  .project-item-content { padding: 15px; }
+  .project-item h3 { font-size: 1.3rem; }
+  .project-links { justify-content: center; }
+
+  .experience-entry { flex-direction: column; gap: 15px; padding-bottom: 25px; margin-bottom: 30px; }
+  .experience-logo-container { width: 80px; margin: 0 auto 10px auto; }
+  .experience-details { text-align: center; }
+  .experience-details ul { text-align: left; margin-left: auto; margin-right: auto; max-width: 90%; padding-left: 20px; }
+  .experience-details h4 { margin-top: 15px; }
+
+  .formal-education-block h3, .certifications-block h3 { font-size: 1.4rem; text-align: center; }
+  .certifications-grid { grid-template-columns: 1fr; gap: 20px; }
+  .certificate-image-container { width: 95px; height: auto; padding: 15px; }
+  .certificate-item { gap: 18px; }
+
+  .interests-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+  .interest-image { height: auto; aspect-ratio: 16 / 9; }
+  .interest-details { padding: 15px; }
+  .interest-details h3 { font-size: 1.2rem; }
+
   .recommendations-grid { grid-template-columns: 1fr; gap: 25px; }
 
-  /* Responsive Navigation */
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .contact-form-container h3, .contact-info-container h3 { text-align: center; }
+  .contact-info-container { padding-top: 20px; border-top: 1px solid #eee; }
+  body.dark-mode .contact-info-container { border-top-color: #444; }
+
   .hamburger-btn { display: block; position: absolute; top: 8px; left: 15px; z-index: 1050; background: none; border: none; padding: 10px; cursor: pointer; width: 40px; height: 40px; }
   .hamburger-line { display: block; width: 25px; height: 3px; background-color: #fff; margin: 5px auto; transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease; }
   body.dark-mode .hamburger-line { background-color: #eee; }
@@ -617,618 +650,40 @@ body.dark-mode .status-sending { color: #8ab4f8; }
   .hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
   .hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(2) { opacity: 0; }
   .hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-} /* End @media (max-width: 768px) */
 
+  @media (max-width: 480px) {
+    .certificate-image-container { width: 85px; height: auto; margin: 0 auto 15px auto;}
+    .certificate-item { gap: 15px; flex-direction: column; text-align: center; }
+    .certificate-details h4 { font-size: 1.1rem; }
 
-/* --- Layout Adjustments for Wider Screens --- */
+    .interests-grid { grid-template-columns: 1fr; }
+    .interest-image { aspect-ratio: 4 / 3; }
+  }
+}
+
 @media (min-width: 769px) {
-  /* Ensure hero side-by-side layout applies */
   .hero-section { text-align: left; }
   .hero-container { flex-direction: row; justify-content: space-between; }
   .hero-content { flex: 2; padding-right: 30px; }
   .hero-image-container { flex: 1; width: auto; text-align: right; }
   .hero-cta { justify-content: flex-start; }
 
-  /* Ensure about side-by-side layout applies */
-   .about-details-grid { grid-template-columns: 1fr 2fr; } /* Or adjust ratio */
+  .about-details-grid { grid-template-columns: 1fr 2fr; }
 
-   /* Ensure desktop nav is visible and hamburger hidden */
-   .hamburger-btn { display: none; }
-   nav ul.nav-list { display: flex; flex-direction: row; position: static; width: auto; background-color: transparent; z-index: auto; padding: 0; border-top: none; box-shadow: none; max-height: none; opacity: 1; overflow: visible; visibility: visible; justify-content: center; }
-   nav ul.nav-list li { display: inline; margin: 0 15px; text-align: left; border-bottom: none; }
-   nav ul.nav-list li a { display: inline-block; padding: 10px 15px; color: #fff; font-size: 1rem; }
-   nav ul.nav-list li a:hover { background-color: #555; color: #ddd; }
-} /* End @media (min-width: 769px) */
+  .hamburger-btn { display: none; }
+  nav ul.nav-list { display: flex; flex-direction: row; position: static; width: auto; background-color: transparent; z-index: auto; padding: 0; border-top: none; box-shadow: none; max-height: none; opacity: 1; overflow: visible; visibility: visible; justify-content: center; }
+  nav ul.nav-list li { display: inline; margin: 0 15px; text-align: left; border-bottom: none; }
+  nav ul.nav-list li a { display: inline-block; padding: 10px 15px; color: #fff; font-size: 1rem; }
+  nav ul.nav-list li a:hover { background-color: #555; color: #ddd; }
+}
 
-/* Optional: Adjust grid for medium screens if needed */
 @media (max-width: 992px) and (min-width: 769px) {
-    .about-details-grid { gap: 25px; /* Smaller gap */ }
-    .approach-grid { grid-template-columns: repeat(2, 1fr); /* Force 2 columns */ }
-    .skills-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); } /* Adjust min size */
-    .projects-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); } /* Adjust min size */
-    .recommendations-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } /* Adjust min size */
-  /* ============================================================ */
-/* === Styles Specific to Enhanced Education Page          === */
-/* ============================================================ */
-
-/* Spacing for main blocks */
-.formal-education-block,
-.certifications-block {
-  margin-bottom: 50px; /* More space between blocks */
-}
-
-/* Formal Education specific styling */
-.formal-education-block h3 {
-  font-size: 1.6rem;
-  color: #3d93a7;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
-}
-.formal-education-block .education-item p {
-    margin-bottom: 15px;
-    line-height: 1.7;
-}
-.formal-education-block .education-item p strong {
-    font-weight: 600;
-    color: #333;
-}
-.formal-education-block .education-item p em {
-    color: #777;
-    font-style: italic;
-}
-
-
-/* Certifications Block Styling */
-.certifications-block h3 {
-  font-size: 1.6rem;
-  color: #3d93a7;
-  margin-bottom: 15px; /* Space below heading before intro p */
-  text-align: center; /* Center subheading */
-}
-.certifications-block .section-intro { /* Style the intro paragraph */
-   font-size: 1.05rem;
-   color: #555;
-   line-height: 1.7;
-   margin-bottom: 40px; /* Space before grid */
-}
-
-
-/* Grid layout for certificates */
-.certifications-grid {
-  display: grid;
-  /* Adjust minmax: 280px is good for cards with images */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-}
-
-/* Individual Certificate Card Styling */
-.certificate-item {
-  background-color: #fff;
-  border-radius: 8px;
-  border: 1px solid #eee;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.07);
-  padding: 20px;
-  display: flex; /* Align image and text side-by-side */
-  align-items: center; /* Vertically center content */
-  gap: 20px; /* Space between image and text */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.certificate-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-}
-
-.certificate-image-container {
-  flex-shrink: 0; /* Don't shrink image container */
-  width: 70px; /* Control logo width */
-  height: 70px; /* Control logo height */
-  /* Optional: Add background if logos are transparent */
-  /* background-color: #f0f0f0; */
-   border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 60%; /* Responsive max width */
-  margin: 0 auto 20px auto; /* Center image in container */
-  /* Optional: Add border or shadow to image container */
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  border-radius: 4px; /* Rounded corners */
-}
-
-.certificate-logo {
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* Scale logo nicely */
-}
-
-.certificate-details {
-  flex-grow: 1; /* Allow text to take remaining space */
-  line-height: 1.5;
-}
-
-.certificate-details h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 5px;
-}
-
-.certificate-issuer,
-.certificate-date {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 3px;
-}
-
-.certificate-details .button { /* Style verify button if added */
-    margin-top: 10px;
-    padding: 5px 12px; /* Make it smaller */
-    font-size: 0.8rem;
-}
-
-/* --- Dark Mode for Education Page --- */
-body.dark-mode .formal-education-block h3 { color: #4db8d2; border-bottom-color: #444; }
-body.dark-mode .formal-education-block .education-item p strong { color: #eee; }
-body.dark-mode .formal-education-block .education-item p em { color: #aaa; }
-
-body.dark-mode .certifications-block h3 { color: #4db8d2; }
-body.dark-mode .certifications-block .section-intro { color: #ccc; }
-
-body.dark-mode .certificate-item { background-color: #2a2a2a; border-color: #444; box-shadow: 0 3px 8px rgba(0,0,0,0.25); }
-body.dark-mode .certificate-item:hover { box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
-body.dark-mode .certificate-details h4 { color: #eee; }
-body.dark-mode .certificate-issuer,
-body.dark-mode .certificate-date { color: #aaa; }
-/* Dark mode button handled globally */
-
-/* --- Responsive for Education Page --- */
-@media (max-width: 768px) {
-    .formal-education-block h3,
-    .certifications-block h3 {
-        font-size: 1.4rem; /* Slightly smaller headings */
-        text-align: center;
-    }
-     .certifications-grid {
-        grid-template-columns: 1fr; /* Stack cards */
-        gap: 20px;
-    }
-    /* Optional: Stack image and text within card on very small screens */
-    /* @media (max-width: 480px) {
-        .certificate-item {
-            flex-direction: column;
-            text-align: center;
-        }
-        .certificate-image-container {
-            margin-bottom: 15px;
-        }
-    } */
-}  
-/* ============================================================ */
-/* === Styles Specific to Experience Page                  === */
-/* ============================================================ */
-
-/* Optional Intro Paragraph */
-.experience .section-intro {
-  /* Existing p styles likely fine, add specifics if needed */
-  font-size: 1.1rem;
-  /* color: #555; */
-}
-
-.experience-entry {
-display: flex;
-gap: 25px; /* Space between logo and details */
-margin-bottom: 40px; /* Space between entries */
-padding-bottom: 30px; /* Space below content before border */
-border-bottom: 1px solid #eee; /* Separator line */
-}
-.experience-entry:last-of-type {
-  border-bottom: none; /* No border on the last item */
-  margin-bottom: 0; /* Adjust margin if CV button follows */
-}
-
-.experience-logo-container {
-flex-shrink: 0; /* Prevent shrinking */
-width: 90px; /* Adjust logo container width */
-/* Optional: Center logo vertically if container is taller */
-/* display: flex; */
-/* align-items: center; */
-}
-
-.experience-logo {
-display: block;
-max-width: 100%;
-height: auto;
-/* Optional: Add subtle styling */
-/* border-radius: 4px; */
-/* border: 1px solid #ddd; */
-}
-
-.experience-details {
-flex-grow: 1; /* Take remaining space */
-}
-
-.experience-details h3 {
-font-size: 1.4rem; /* Job title size */
-color: #333;
-margin-bottom: 3px; /* Less space below title */
-font-weight: 600;
-}
-
-.experience-company a,
-.experience-company strong {
-  font-weight: 600;
-  color: #444; /* Company name color */
-  font-size: 1.05rem;
-}
-.experience-company a:hover {
-  color: #007bff; /* Example hover */
-}
-.experience-company {
-  margin-bottom: 5px; /* Space below company */
-}
-
-
-.experience-dates {
-display: block;
-font-style: italic;
-color: #777;
-margin-bottom: 15px;
-font-size: 0.95rem;
-}
-
-.experience-details h4 {
-font-size: 1rem; /* Smaller heading for responsibilities */
-color: #555;
-margin-bottom: 10px;
-margin-top: 5px; /* Space above heading */
-font-weight: 600;
-text-transform: uppercase; /* Optional styling */
-letter-spacing: 0.5px; /* Optional styling */
-}
-
-.experience-details ul {
-list-style: disc;
-margin-left: 20px;
-padding-left: 0;
-}
-
-.experience-details li {
-margin-bottom: 8px;
-color: #555;
-line-height: 1.7;
-}
-
-/* --- Dark Mode Experience Page --- */
-body.dark-mode #experience .section-intro { color: #ccc; }
-body.dark-mode .experience-entry { border-bottom-color: #444; }
-body.dark-mode .experience-logo { background-color: #333;  border-color: #555;  }
-body.dark-mode .experience-details h3 { color: #eee; }
-body.dark-mode .experience-company a, body.dark-mode .experience-company strong { color: #ddd; }
-body.dark-mode .experience-company a:hover { color: #aecbfa; }
-body.dark-mode .experience-dates { color: #aaa; }
-body.dark-mode .experience-details h4 { color: #bbb; }
-body.dark-mode .experience-details li { color: #ccc; }
-
-/* --- Responsive Experience Page --- */
-@media (max-width: 768px) {
-.experience-entry {
-  flex-direction: column; /* Stack logo and details */
-  gap: 15px; /* Adjust gap */
-  padding-bottom: 25px;
-  margin-bottom: 30px;
-}
-.experience-logo-container {
-  width: 80px; /* Maintain logo size or adjust */
-  margin: 0 auto 10px auto; /* Center logo, add space below */
-  /* Remove flex alignment if used */
-  /* display: block; */
-}
-.experience-details {
-  text-align: center; /* Center headings */
-}
-.experience-details ul {
-  text-align: left; /* Keep list items left-aligned */
-  margin-left: auto; /* Center the list block */
-  margin-right: auto;
-  max-width: 90%; /* Prevent list from touching edges */
-  padding-left: 20px; /* Ensure bullets are visible */
-}
- .experience-details h4 {
-     margin-top: 15px; /* More space above heading */
- }
-}
-/* ============================================================ */
-/* === Styles Specific to Interests Page                   === */
-/* ============================================================ */
-
-/* Optional Intro Paragraph Style (Reuse from Skills if defined) */
-.interests .section-intro {
-  text-align: center;
-   max-width: 800px;
-   margin: 0 auto 40px auto;
-   font-size: 1.1rem;
-  color: #555; 
-}
-
-/* Grid layout for interests */
-.interests-grid {
-display: grid;
-/* Adjust minmax: Cards can be slightly smaller if needed */
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 30px; /* Gap between cards */
-margin-top: 30px;
-}
-
-/* Individual Interest Card Styling (Adapting from .project-item) */
-.interest-item {
-background-color: #fff;
-border: 1px solid #eee;
-border-radius: 8px;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-overflow: hidden; /* Important for image radius */
-display: flex; /* Ensure details fill height if needed */
-flex-direction: column;
-transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.interest-item:hover {
-transform: translateY(-5px);
-box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-}
-
-/* Interest Image Styling (Adapting from .project-thumbnail) */
-.interest-image {
-width: 100%;
-height: 200px; /* Adjust height as desired */
-object-fit: cover; /* Cover ensures image fills space */
-display: block; /* Remove extra space below image */
-/* border-bottom: 1px solid #eee; */ /* Optional separator */
-}
-
-/* Details container within the card */
-.interest-details {
-padding: 20px;
-flex-grow: 1; /* Allow text area to grow */
-}
-
-.interest-details h3 {
-font-size: 1.3rem; /* Interest title size */
-color: #333;
-margin-bottom: 10px;
-font-weight: 600;
-}
-
-.interest-details p {
-font-size: 0.95rem;
-color: #555;
-line-height: 1.6;
-}
-
-/* --- Dark Mode for Interests Page --- */
-body.dark-mode #interests .section-intro { color: #ccc; }
-body.dark-mode .interest-item { background-color: #2a2a2a; border-color: #444; box-shadow: 0 4px 10px rgba(0,0,0,0.25); }
-body.dark-mode .interest-item:hover { box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
-body.dark-mode .interest-image {  background-color: #333;   border-bottom-color: #444;  }
-body.dark-mode .interest-details h3 { color: #eee; }
-body.dark-mode .interest-details p { color: #ccc; }
-
-/* --- Responsive for Interests Page --- */
-@media (max-width: 768px) {
-  .interests-grid {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Allow slightly smaller cards */
-      gap: 20px;
-  }
-  .interest-image {
-      height: 160px; /* Slightly shorter image on mobile */
-  }
-  .interest-details {
-      padding: 15px;
-  }
-   .interest-details h3 {
-      font-size: 1.2rem;
-  }
-}
-/* Optional: Stack fully on very small screens */
-@media (max-width: 480px) {
-  .interests-grid {
-      grid-template-columns: 1fr;
-  }
-}
-/* ============================================================ */
-/* === Styles Specific to Projects Page (Additions/Refinements) === */
-/* ============================================================ */
-
-/* Optional Intro Paragraph Style */
-.projects .section-intro {
-  text-align: center;
-  max-width: 850px;
-  margin: 0 auto 40px auto;
-  font-size: 1.05rem;
-  color: #555;
-}
-
-/* Style for the project role paragraph */
-.project-role {
-  font-size: 0.95rem;
-  color: #777; /* Slightly muted color */
-  margin-bottom: 15px; /* Space below role */
-  font-style: italic;
-}
-.project-role strong {
-  font-style: normal; /* Keep "My Role:" normal */
-  color: #555; /* Slightly darker */
-  font-weight: 600;
-}
-
-/* Container for project links/buttons */
-.project-links {
-margin-top: auto; /* Push links to the bottom of the card content */
-padding-top: 15px; /* Space above the links */
-display: flex; /* Align buttons horizontally */
-flex-wrap: wrap; /* Allow buttons to wrap on small cards */
-gap: 10px; /* Space between buttons */
-}
-
-/* Ensure small buttons in links div have appropriate margin */
-.project-links .button.button-small {
-  margin-top: 0; /* Reset default button margin */
-}
-
-
-/* --- Dark Mode for Project Page Additions --- */
-body.dark-mode #projects .section-intro { color: #ccc; }
-body.dark-mode .project-role { color: #aaa; }
-body.dark-mode .project-role strong { color: #ccc; }
-/* Dark mode buttons handled globally */
-
-
-/* --- Responsive for Projects Page --- */
-@media (max-width: 768px) {
-  .projects-grid {
-      grid-template-columns: 1fr; /* Stack projects */
-      gap: 25px;
-  }
-   .project-item-content {
-       padding: 15px; /* Slightly less padding */
-   }
-   .project-item h3 {
-       font-size: 1.3rem;
-   }
-   .project-links {
-       justify-content: center; /* Center buttons if they wrap */
-   }
-}
-/* ============================================================ */
-/* === Styles Specific to Contact Page                     === */
-/* ============================================================ */
-
-/* Optional Intro Paragraph Style */
-.contact .section-intro {
-  text-align: center;
-  max-width: 750px;
-  margin: 0 auto 40px auto;
-  font-size: 1.05rem;
-  color: #555;
-}
-
-/* Grid for Form + Info */
-.contact-grid {
-display: grid;
-/* Create two roughly equal columns, adjust ratio if needed */
-grid-template-columns: 1fr 1fr;
-gap: 40px; /* Space between columns */
-margin-top: 30px;
-}
-
-/* Style the containers within the grid */
-.contact-form-container,
-.contact-info-container {
-/* Add padding or borders if desired */
- padding: 20px;
-}
-
-/* Headings within the contact columns */
-.contact-form-container h3,
-.contact-info-container h3 {
-font-size: 1.5rem;
-color: #3d93a7; /* Theme color */
-margin-bottom: 20px;
-font-weight: 600;
-}
-
-/* Form styling adjustments (if needed, defaults might be okay) */
-.contact-form label {
-  font-weight: 600; /* Make labels bolder? */
-}
-#contact-form button.button-primary {
-  width: 100%; /* Make button full-width */
-  padding: 14px 25px; /* Larger button */
-  font-size: 1.1rem;
-}
-
-/* Styling for the alternative contact info */
-.contact-info-container p {
-  margin-bottom: 20px;
-  line-height: 1.7;
-  color: #555;
-}
-
-.contact-info-list {
-list-style: none;
-padding-left: 0;
-margin: 0;
-}
-
-.contact-info-list li {
-margin-bottom: 15px;
-display: flex; /* Align icon and text */
-align-items: center;
-gap: 10px; /* Space between icon and text */
-}
-
-.contact-icon {
-font-size: 1.4rem; /* Adjust icon size */
-color: #3d93a7; /* Theme color */
-width: 25px; /* Fixed width for alignment */
-text-align: center;
-}
-
-.contact-info-list a {
-color: #333; /* Standard link color */
-text-decoration: none;
-font-weight: 500;
-}
-.contact-info-list a:hover {
-color: #007bff; /* Hover color */
-text-decoration: underline;
-}
-
-/* Optional Location Info */
-.location-info {
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid #eee;
-}
-.location-info h4 {
-  font-size: 1.1rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-/* --- Dark Mode for Contact Page --- */
-body.dark-mode #contact .section-intro { color: #ccc; }
-body.dark-mode .contact-form-container h3,
-body.dark-mode .contact-info-container h3 { color: #4db8d2; }
-body.dark-mode .contact-info-container p { color: #ccc; }
-body.dark-mode .contact-info-list a { color: #8ab4f8; } /* Use dark link color */
-body.dark-mode .contact-info-list a:hover { color: #aecbfa; }
-body.dark-mode .contact-icon { color: #4db8d2; }
-body.dark-mode .location-info { border-top-color: #444; }
-body.dark-mode .location-info h4 { color: #eee; }
-/* Form input dark mode is handled globally */
-/* Button dark mode is handled globally */
-
-/* --- Responsive for Contact Page --- */
-@media (max-width: 992px) { /* Adjust breakpoint if needed */
-  .contact-grid {
-      grid-template-columns: 1fr; /* Stack columns */
-      gap: 40px; /* Vertical gap */
-  }
-  .contact-form-container h3,
-  .contact-info-container h3 {
-      text-align: center; /* Center headings when stacked */
-  }
-   .contact-info-container {
-       padding-top: 20px; /* Add space above info when stacked */
-       border-top: 1px solid #eee; /* Add separator when stacked */
-   }
-    body.dark-mode .contact-info-container {
-        border-top-color: #444;
-    }
-}
+    .about-details-grid { gap: 25px; }
+    .approach-grid { grid-template-columns: repeat(2, 1fr); }
+    .skills-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .projects-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .recommendations-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    .certifications-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .interests-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .contact-grid { grid-template-columns: 1fr 1fr; }
 }
